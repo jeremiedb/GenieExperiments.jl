@@ -1,7 +1,7 @@
 name = "GenieExperiments"
 uuid = "db8b4d46-bfed-4aa5-a5f8-40df1e9542e5"
 authors = ["jeremie.db <jeremie.db@evovest.com>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
