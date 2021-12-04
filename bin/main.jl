@@ -5,10 +5,11 @@ ENV["GENIE_ENV"] = "prod"
 @info "$(readdir())"
 
 using Pkg
-Pkg.status()
+@info(Pkg.status())
 
-pwd() == joinpath(@__DIR__, "bin") && cd(@__DIR__) # allow starting app from bin/ dir
 cd(dirname(@__DIR__))
+# pwd() == joinpath(@__DIR__, "bin") && cd(@__DIR__) # allow starting app from bin/ dir
+pwd() == @__DIR__ && cd(@__DIR__) # allow starting app from bin/ dir
 
 env = ENV["GENIE_ENV"]
 @info "After init"
