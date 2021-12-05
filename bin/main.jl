@@ -18,11 +18,9 @@ env = ENV["GENIE_ENV"]
 @info "@__DIR__: $(@__DIR__)"
 @info "$(readdir())"
 
-
 using Genie
 Genie.loadapp()
 Genie.startup()
-
 # using GenieExperiments
 # push!(Base.modules_warned_for, Base.PkgId(GenieExperiments))
 # GenieExperiments.main()
