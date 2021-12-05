@@ -7,9 +7,9 @@ ENV["GENIE_ENV"] = "prod"
 using Pkg
 @info(Pkg.status())
 
-# cd(dirname(@__DIR__))
 pwd() == joinpath(@__DIR__, "bin") && cd(@__DIR__) # allow starting app from bin/ dir
 # pwd() == @__DIR__ # allow starting app from bin/ dir
+cd(dirname(@__DIR__))
 
 @info "After init"
 env = ENV["GENIE_ENV"]
