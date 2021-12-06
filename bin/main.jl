@@ -9,7 +9,7 @@ using Pkg
 
 pwd() == joinpath(@__DIR__, "bin") && cd(@__DIR__) # allow starting app from bin/ dir
 # pwd() == @__DIR__ # allow starting app from bin/ dir
-cd(dirname(@__DIR__))
+# cd(dirname(@__DIR__))
 
 @info "After init"
 env = ENV["GENIE_ENV"]
@@ -18,9 +18,10 @@ env = ENV["GENIE_ENV"]
 @info "@__DIR__: $(@__DIR__)"
 @info "$(readdir())"
 
-using Genie
-Genie.loadapp()
-Genie.startup()
-# using GenieExperiments
-# push!(Base.modules_warned_for, Base.PkgId(GenieExperiments))
-# GenieExperiments.main()
+using GenieExperiments
+push!(Base.modules_warned_for, Base.PkgId(GenieExperiments))
+GenieExperiments.main()
+
+# using Genie
+# Genie.loadapp()
+# Genie.startup()

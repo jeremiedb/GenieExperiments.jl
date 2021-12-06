@@ -19,16 +19,12 @@ page(
 	Html.div(class="row px-3 py-3", [
 		Html.div(class="col-md-6 px-3", [
 			cell([
-				# intersection([
-				plot(:hist_plot_data; options=:hist_plot_opts, height=200)
-				# ])
+				plot(:line_plot_data; options=:line_plot_opts, height=200)
 			])
 		])
 		Html.div(class="col-md-6 px-3", [
 			cell([
-				# intersection([
 				plot(:hist_plot_data; options=:hist_plot_opts, height=200)
-				# ])
 			])
 		])
 	])
