@@ -9,7 +9,7 @@ using Pkg
 
 pwd() == joinpath(@__DIR__, "bin") && cd(@__DIR__) # allow starting app from bin/ dir
 # pwd() == @__DIR__ # allow starting app from bin/ dir
-# cd(dirname(@__DIR__))
+cd(dirname(@__DIR__))
 
 @info "After init"
 env = ENV["GENIE_ENV"]
