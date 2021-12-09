@@ -1,27 +1,7 @@
+push!(LOAD_PATH, abspath(normpath(joinpath(@__DIR__, "../src/"))))
+
+ENV["STARTSERVER"] = true
 ENV["GENIE_ENV"] = "prod"
+ENV["EARLYBIND"] = true
 
-@info "pwd(): $(pwd())"
-@info "@__DIR__: $(@__DIR__)"
-@info "$(readdir())"
-
-using Pkg
-@info(Pkg.status())
-
-cd(@__DIR__)
-pwd() == joinpath(@__DIR__, "bin") && cd(@__DIR__) # allow starting app from bin/ dir
-# pwd() == @__DIR__ # allow starting app from bin/ dir
-
-@info "After init"
-env = ENV["GENIE_ENV"]
-@info "Genie ENV: $env"
-@info "pwd(): $(pwd())"
-@info "@__DIR__: $(@__DIR__)"
-@info "$(readdir())"
-
-using GenieExperiments
-push!(Base.modules_warned_for, Base.PkgId(GenieExperiments))
-GenieExperiments.main()
-
-# using Genie
-# Genie.loadapp()
-# Genie.startup()
+include("../bootstrap.jl")
