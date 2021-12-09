@@ -15,12 +15,6 @@ uuid = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
 [[Base64]]
 uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
 
-[[BinaryProvider]]
-deps = ["Libdl", "Logging", "SHA"]
-git-tree-sha1 = "ecdec412a9abc8db54c0efc5548c64dfce072058"
-uuid = "b99e7846-7c00-51b0-8f62-c81ae34c0232"
-version = "0.5.10"
-
 [[CSTParser]]
 deps = ["Tokenize"]
 git-tree-sha1 = "f9a6389348207faf5e5c62cbc7e89d19688d338a"
@@ -29,9 +23,9 @@ version = "3.3.0"
 
 [[ChainRulesCore]]
 deps = ["Compat", "LinearAlgebra", "SparseArrays"]
-git-tree-sha1 = "f885e7e7c124f8c92650d61b9477b9ac2ee607dd"
+git-tree-sha1 = "4c26b4e9e91ca528ea212927326ece5918a04b47"
 uuid = "d360d2e6-b24c-11e9-a2a3-2a2ae2dbcce4"
-version = "1.11.1"
+version = "1.11.2"
 
 [[ChangesOfVariables]]
 deps = ["LinearAlgebra", "Test"]
@@ -59,9 +53,9 @@ version = "0.12.8"
 
 [[CommonMark]]
 deps = ["Crayons", "JSON", "URIs"]
-git-tree-sha1 = "393ac9df4eb085c2ab12005fc496dae2e1da344e"
+git-tree-sha1 = "7a0d74b8b007c8170dd48166fdc4be049bf68f70"
 uuid = "a80b9123-70ca-4bc0-993e-6e3bcb318db6"
-version = "0.8.3"
+version = "0.8.4"
 
 [[Compat]]
 deps = ["Base64", "Dates", "DelimitedFiles", "Distributed", "InteractiveUtils", "LibGit2", "Libdl", "LinearAlgebra", "Markdown", "Mmap", "Pkg", "Printf", "REPL", "Random", "SHA", "Serialization", "SharedArrays", "Sockets", "SparseArrays", "Statistics", "Test", "UUIDs", "Unicode"]
@@ -73,11 +67,6 @@ version = "3.40.0"
 git-tree-sha1 = "3f71217b538d7aaee0b69ab47d9b7724ca8afa0d"
 uuid = "a8cc5b0e-0ffa-5ad4-8c14-923d3ee1735f"
 version = "4.0.4"
-
-[[DBInterface]]
-git-tree-sha1 = "9b0dc525a052b9269ccc5f7f04d5b3639c65bca5"
-uuid = "a10d1c49-ce27-4219-8d33-6db1a4562965"
-version = "2.5.0"
 
 [[DataAPI]]
 git-tree-sha1 = "cc70b17275652eb47bc9e5f81635981f13cea5c8"
@@ -92,9 +81,9 @@ version = "1.3.0"
 
 [[DataStructures]]
 deps = ["Compat", "InteractiveUtils", "OrderedCollections"]
-git-tree-sha1 = "7d9d316f04214f7efdbb6398d545446e246eff02"
+git-tree-sha1 = "3daef5523dd2e769dad2365274f760ff5f282c7d"
 uuid = "864edb3b-99cc-5e75-8d2d-829cb0a9cfe8"
-version = "0.18.10"
+version = "0.18.11"
 
 [[DataValueInterfaces]]
 git-tree-sha1 = "bfc1187b79289637fa0ef6d4436ebdfe6905cbd6"
@@ -160,9 +149,9 @@ uuid = "781609d7-10c4-51f6-84f2-b8444358ff6d"
 
 [[Genie]]
 deps = ["ArgParse", "Dates", "Distributed", "EzXML", "FilePathsBase", "HTTP", "HttpCommon", "Inflector", "JSON3", "JuliaFormatter", "Logging", "Markdown", "MbedTLS", "Millboard", "Nettle", "OrderedCollections", "Pkg", "REPL", "Random", "Reexport", "Revise", "SHA", "Serialization", "Sockets", "UUIDs", "Unicode", "VersionCheck", "YAML"]
-git-tree-sha1 = "a9998d81a4120872fc28ae8554e86a101bc75b67"
+git-tree-sha1 = "69500f77a24cf8cfdcb7c58633154348de8056df"
 uuid = "c43c736e-a2d1-11e8-161f-af95117fbd1e"
-version = "4.4.3"
+version = "4.5.0"
 
 [[HTTP]]
 deps = ["Base64", "Dates", "IniFile", "Logging", "MbedTLS", "NetworkOptions", "Sockets", "URIs"]
@@ -187,12 +176,6 @@ deps = ["Test"]
 git-tree-sha1 = "098e4d2c533924c921f9f9847274f2ad89e018b8"
 uuid = "83e8ac13-25f8-5344-8a64-a9f2b223428f"
 version = "0.5.0"
-
-[[InlineStrings]]
-deps = ["Parsers"]
-git-tree-sha1 = "ca99cac337f8e0561c6a6edeeae5bf6966a78d21"
-uuid = "842dd82b-1e85-43dc-bf29-5d0ee9dffc48"
-version = "1.1.0"
 
 [[InteractiveUtils]]
 deps = ["Markdown"]
@@ -299,6 +282,12 @@ git-tree-sha1 = "491a883c4fef1103077a7f648961adbf9c8dd933"
 uuid = "6f1432cf-f94c-5a45-995e-cdbf5db27b0b"
 version = "2.1.2"
 
+[[MacroTools]]
+deps = ["Markdown", "Random"]
+git-tree-sha1 = "3d3e902b31198a27340d0bf00d6ac452866021cf"
+uuid = "1914dd2f-81c6-5fcd-8719-6d5c9610ff09"
+version = "0.5.9"
+
 [[Markdown]]
 deps = ["Base64"]
 uuid = "d6f4376e-aef5-505a-96c1-9c027394607a"
@@ -323,6 +312,12 @@ deps = ["DataAPI"]
 git-tree-sha1 = "bf210ce90b6c9eed32d25dbcae1ebc565df2687f"
 uuid = "e1d29d7a-bbdc-5cf2-9ac0-f12de2c33e28"
 version = "1.0.2"
+
+[[Mixers]]
+deps = ["MacroTools"]
+git-tree-sha1 = "f3dc82a759768fb5c219222634f551667aed1bb8"
+uuid = "2a8e4939-dab8-5edc-8f64-72a8776f13de"
+version = "0.1.1"
 
 [[Mmap]]
 uuid = "a63ad114-7e13-5084-954f-fe012c677804"
@@ -359,6 +354,12 @@ version = "0.4.0"
 git-tree-sha1 = "85f8e6578bf1f9ee0d11e7bb1b1456435479d47c"
 uuid = "bac558e1-5e72-5ebc-8fee-abe8a469f55d"
 version = "1.4.1"
+
+[[Parameters]]
+deps = ["OrderedCollections", "UnPack"]
+git-tree-sha1 = "34c0e9ad262e5f7fc75b10a9952ca7692cfc5fbe"
+uuid = "d96e819e-fc66-5662-9728-84c9c7592b0a"
+version = "0.12.3"
 
 [[Parsers]]
 deps = ["Dates"]
@@ -419,42 +420,18 @@ version = "1.1.3"
 
 [[Revise]]
 deps = ["CodeTracking", "Distributed", "FileWatching", "JuliaInterpreter", "LibGit2", "LoweredCodeUtils", "OrderedCollections", "Pkg", "REPL", "Requires", "UUIDs", "Unicode"]
-git-tree-sha1 = "41deb3df28ecf75307b6e492a738821b031f8425"
+git-tree-sha1 = "6f2bc8f1a444f93c52163e6f82270877224632d0"
 uuid = "295af30f-e4ad-537b-8983-00126c2a3abe"
-version = "3.1.20"
+version = "3.2.0"
 
 [[SHA]]
 uuid = "ea8e919c-243c-51af-8825-aaa63cd721ce"
-
-[[SQLite]]
-deps = ["BinaryProvider", "DBInterface", "Dates", "Libdl", "Random", "SQLite_jll", "Serialization", "Tables", "Test", "WeakRefStrings"]
-git-tree-sha1 = "ff81f9a47cbfaad52693ce0c74bbd86f2166f64d"
-uuid = "0aa819cd-b072-5ff4-a722-6bc24af294d9"
-version = "1.3.0"
-
-[[SQLite_jll]]
-deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg", "Zlib_jll"]
-git-tree-sha1 = "cca82caa0b6bf7f0bc977e69063c0cf5d7da36e5"
-uuid = "76ed43ae-9a5d-5a62-8c75-30186b810ce8"
-version = "3.37.0+0"
 
 [[Scratch]]
 deps = ["Dates"]
 git-tree-sha1 = "0b4b7f1393cff97c33891da2a0bf69c6ed241fda"
 uuid = "6c6a2e73-6563-6170-7368-637461726353"
 version = "1.1.0"
-
-[[SearchLight]]
-deps = ["DataFrames", "Dates", "Distributed", "Inflector", "JSON3", "Logging", "Millboard", "OrderedCollections", "Reexport", "SHA", "Unicode", "YAML"]
-git-tree-sha1 = "e78cc5ccbf75f4b9aa2ccfcd59b1a99fb3bd5e38"
-uuid = "340e8cb6-72eb-11e8-37ce-c97ebeb32050"
-version = "2.0.1"
-
-[[SearchLightSQLite]]
-deps = ["DBInterface", "DataFrames", "Logging", "SQLite", "SearchLight"]
-git-tree-sha1 = "f56a4eb6cbbe3d84746aa2a5b509a47e0003d699"
-uuid = "21a827c4-482a-11ea-3a19-4d2243a4a2c5"
-version = "2.0.0"
 
 [[Serialization]]
 uuid = "9e88b42a-f829-5b0c-bbe9-9e923198166b"
@@ -492,22 +469,24 @@ uuid = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
 version = "0.33.13"
 
 [[Stipple]]
-deps = ["FilePathsBase", "Genie", "JSON", "Logging", "Observables", "Pkg", "Reexport", "Requires"]
-git-tree-sha1 = "85c0ff5342fe3e49aa004ad983a235709e7cae50"
+deps = ["FilePathsBase", "Genie", "JSON", "Logging", "Mixers", "Observables", "OrderedCollections", "Parameters", "Pkg", "Random", "Reexport", "Requires"]
+git-tree-sha1 = "bac73abbd7f1dc6b3f8a24b7fe6a388bba3c849a"
 uuid = "4acbeb90-81a0-11ea-1966-bdaff8155998"
-version = "0.16.0"
+version = "0.18.2"
 
 [[StippleCharts]]
 deps = ["DataFrames", "Genie", "Stipple"]
-git-tree-sha1 = "6e701ba9c30368e3831ecb5cb9071b87473558c9"
+git-tree-sha1 = "9b9af5800ce45b84371a664588f356e5cd9691d6"
+repo-rev = "master"
+repo-url = "https://github.com/GenieFramework/StippleCharts.jl.git"
 uuid = "30ddb3f0-912f-4f34-9804-e4bb31290777"
-version = "0.14.1"
+version = "0.16.0"
 
 [[StippleUI]]
 deps = ["Colors", "DataFrames", "Dates", "Genie", "Stipple"]
-git-tree-sha1 = "91507337aa5de76dee7a29cd2bff424bad4b43a8"
+git-tree-sha1 = "58b483bbcf665818717f508b57095b69dd6ed606"
 uuid = "a3c5d34a-b254-4859-a8fa-b86abb7e84a3"
-version = "0.10.1"
+version = "0.12.0"
 
 [[StringEncodings]]
 deps = ["Libiconv_jll"]
@@ -570,6 +549,11 @@ version = "1.3.0"
 deps = ["Random", "SHA"]
 uuid = "cf7118a7-6976-5b1a-9a39-7adc72f591a4"
 
+[[UnPack]]
+git-tree-sha1 = "387c1f73762231e86e0c9c5443ce3b4a0a9a0c2b"
+uuid = "3a884ed6-31ef-47d7-9d2a-63182c4928ed"
+version = "1.0.2"
+
 [[Unicode]]
 uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
 
@@ -584,12 +568,6 @@ deps = ["Dates", "JSON3", "Logging", "Pkg", "Random", "Scratch", "UrlDownload"]
 git-tree-sha1 = "89ef2431dd59344ebaf052d0737205854ded0c62"
 uuid = "a637dc6b-bca1-447e-a4fa-35264c9d0580"
 version = "0.2.0"
-
-[[WeakRefStrings]]
-deps = ["DataAPI", "InlineStrings", "Parsers"]
-git-tree-sha1 = "c69f9da3ff2f4f02e811c3323c22e5dfcb584cfa"
-uuid = "ea10d353-3f73-51f8-a26c-33c1cb351aa5"
-version = "1.4.1"
 
 [[XML2_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Libiconv_jll", "Pkg", "Zlib_jll"]

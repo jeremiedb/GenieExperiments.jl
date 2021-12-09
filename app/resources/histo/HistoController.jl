@@ -63,17 +63,26 @@ function render_histo_3()
 
     model = Stipple.init(Model())
 
+    ps = PlotSeries[]
+    push!(ps, PlotSeries("serie-A", PlotData([1.1, 2.2, 16.0, -2])))
+    model.line_plot_data[] = ps
+    model.line_plot_opts[] = PlotOptions(;line_plot_opts...)
+
     on(model.process) do _
         if (model.process[])
             input = isa(model.input[], String) ? parse(Float64, model.input[]) : convert(Float64, model.input[])
             model.hist[] = push!(model.hist[], input)
 
-            ps = PlotSeries[]
-            push!(ps, PlotSeries("serie-A", PlotData(model.hist[])))
+            # ps = PlotSeries[]
+            # push!(ps, PlotSeries("serie-A", PlotData(model.hist[])))
+            # model.line_plot_data[] = ps
+            # model.line_plot_opts[] = PlotOptions(;line_plot_opts...)
             
+            ps = PlotSeries[]
+            push!(ps, PlotSeries("serie-A", PlotData([1.1, 2.2, 16.0, -2])))
             model.line_plot_data[] = ps
             model.line_plot_opts[] = PlotOptions(;line_plot_opts...)
-            
+    
             data = Float64.(model.hist[])
             range_raw = extrema(data)
 			range_ext = (range_raw[1] - 0.01 * (range_raw[2] - range_raw[1]), range_raw[2] + 0.01 * (range_raw[2] - range_raw[1]))
