@@ -1,14 +1,11 @@
 using Genie, Genie.Requests, Genie.Renderer, Genie.Router, Genie.Renderer.Html, Genie.Exceptions
-
-using Stipple, StippleUI 
-using StippleCharts
 using HistoController
+using DashboardsController
 
 route("/") do
-  serve_static_file("welcome.html")
+  html(:dashboards, :dashboards; layout=:app, context=DashboardsController, DashboardsController.render()...)
 end
 
 route("/histo") do
-  html(:histo, :histo; layout=:base, context=@__MODULE__, HistoController.render_histo_3()...)
-  # HistoController.render_histo_2()
+  html(:histo, :histo; layout=:base, context=HistoController, HistoController.render()...)
 end
