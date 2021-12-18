@@ -59,7 +59,7 @@ function __init__()
     Stipple.register_components(Model, StippleCharts.COMPONENTS)
 end
 
-function render_histo_3()
+function render()
 
     model = Stipple.init(Model())
 
