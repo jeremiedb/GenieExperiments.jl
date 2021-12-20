@@ -24,7 +24,7 @@ const iris_colors = Dict(
   iris_plot_data::R{Vector{PlotData}} = PlotData[]   # PlotSeries is structure used to store data
   cluster_plot_data::R{Vector{PlotData}} = PlotData[]
 
-  # plot_layout and config: Plotly specific 
+  # plot_layout and config: Plotly specific
   plot_layout::PlotLayout = PlotLayout()
   plot_config::R{PlotConfig} = PlotConfig(displaylogo = false)
 
@@ -43,10 +43,10 @@ function plot_data(group::Symbol, model::IrisModel)
   for s in unique(data[:, group])
     subdata = data[data[!, group].==s, :]
     if group == :Species
-      push!(result, PlotData(x = subdata[:, model.xfeature[]], y = subdata[:, model.yfeature[]], 
+      push!(result, PlotData(x = subdata[:, model.xfeature[]], y = subdata[:, model.yfeature[]],
         plot = "scatter", mode = "markers", marker=PlotDataMarker(color=iris_colors[s]), name = string(s)))
     else
-      push!(result, PlotData(x = subdata[:, model.xfeature[]], y = subdata[:, model.yfeature[]], 
+      push!(result, PlotData(x = subdata[:, model.xfeature[]], y = subdata[:, model.yfeature[]],
         plot = "scatter", mode = "markers", name = string(s)))
     end
   end
@@ -67,14 +67,13 @@ end
 The render function returns the model that is fed into the view to render the Dashboard.
 """
 function render()
-  model = Stipple.init(IrisModel)
-  model.iris_plot_data[] = plot_data(:Species, model)
-  compute_clusters!(model)
+  model = init(IrisModel)
 
-  onany(model.xfeature, model.yfeature, model.no_of_clusters, model.no_of_iterations) do (_...)
+  onany(model.xfeature, model.yfeature, model.no_of_clusters, model.no_of_iterations, model.isready) do (_...)
     model.iris_plot_data[] = plot_data(:Species, model)
     compute_clusters!(model)
   end
+
   return (model = model,)
 end
 

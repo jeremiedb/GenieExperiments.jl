@@ -87,6 +87,10 @@ git-tree-sha1 = "44c37b4636bc54afac5c574d2d02b625349d6582"
 uuid = "34da2185-b29b-5c13-b0c7-acf172513d20"
 version = "3.41.0"
 
+[[CompilerSupportLibraries_jll]]
+deps = ["Artifacts", "Libdl"]
+uuid = "e66e0078-7015-5450-92f7-15fbd957f2ae"
+
 [[Crayons]]
 git-tree-sha1 = "3f71217b538d7aaee0b69ab47d9b7724ca8afa0d"
 uuid = "a8cc5b0e-0ffa-5ad4-8c14-923d3ee1735f"
@@ -99,9 +103,9 @@ version = "1.9.0"
 
 [[DataFrames]]
 deps = ["Compat", "DataAPI", "Future", "InvertedIndices", "IteratorInterfaceExtensions", "LinearAlgebra", "Markdown", "Missings", "PooledArrays", "PrettyTables", "Printf", "REPL", "Reexport", "SortingAlgorithms", "Statistics", "TableTraits", "Tables", "Unicode"]
-git-tree-sha1 = "2e993336a3f68216be91eb8ee4625ebbaba19147"
+git-tree-sha1 = "cfdfef912b7f93e4b848e80b9befdf9e331bc05a"
 uuid = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
-version = "1.3.0"
+version = "1.3.1"
 
 [[DataStructures]]
 deps = ["Compat", "InteractiveUtils", "OrderedCollections"]
@@ -190,7 +194,7 @@ uuid = "781609d7-10c4-51f6-84f2-b8444358ff6d"
 
 [[Genie]]
 deps = ["ArgParse", "Dates", "Distributed", "EzXML", "FilePathsBase", "HTTP", "HttpCommon", "Inflector", "JSON3", "JuliaFormatter", "Logging", "Markdown", "MbedTLS", "Millboard", "Nettle", "OrderedCollections", "Pkg", "REPL", "Random", "Reexport", "Revise", "SHA", "Serialization", "Sockets", "UUIDs", "Unicode", "VersionCheck", "YAML"]
-git-tree-sha1 = "cb9b06f68897b5cd21595923018fded43093cfd5"
+path = "/Users/adrian/.julia/dev/Genie"
 uuid = "c43c736e-a2d1-11e8-161f-af95117fbd1e"
 version = "4.7.0"
 
@@ -269,9 +273,9 @@ version = "1.9.2"
 
 [[JuliaFormatter]]
 deps = ["CSTParser", "CommonMark", "DataStructures", "Pkg", "Tokenize"]
-git-tree-sha1 = "e48d87cd84b096d26d4a7d54d425e3f298a00796"
+git-tree-sha1 = "51e6716cc630c157dc5fbd466429c891f5ce6462"
 uuid = "98e50ef6-434e-11e9-1051-2b60c6c9e899"
-version = "0.20.4"
+version = "0.20.5"
 
 [[JuliaInterpreter]]
 deps = ["CodeTracking", "InteractiveUtils", "Random", "UUIDs"]
@@ -309,7 +313,7 @@ uuid = "94ce4f54-9a6c-5748-9c1c-f9c7231a4531"
 version = "1.16.1+1"
 
 [[LinearAlgebra]]
-deps = ["Libdl"]
+deps = ["Libdl", "libblastrampoline_jll"]
 uuid = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
 
 [[LogExpFunctions]]
@@ -413,6 +417,10 @@ git-tree-sha1 = "fe29afdef3d0c4a8286128d4e45cc50621b1e43d"
 uuid = "510215fc-4207-5dde-b226-833fc4488ee2"
 version = "0.4.0"
 
+[[OpenBLAS_jll]]
+deps = ["Artifacts", "CompilerSupportLibraries_jll", "Libdl"]
+uuid = "4536629a-c528-5b80-bd46-f80d51c5b363"
+
 [[OrderedCollections]]
 git-tree-sha1 = "85f8e6578bf1f9ee0d11e7bb1b1456435479d47c"
 uuid = "bac558e1-5e72-5ebc-8fee-abe8a469f55d"
@@ -448,9 +456,9 @@ version = "1.2.2"
 
 [[PrettyTables]]
 deps = ["Crayons", "Formatting", "Markdown", "Reexport", "Tables"]
-git-tree-sha1 = "d940010be611ee9d67064fe559edbb305f8cc0eb"
+git-tree-sha1 = "dfb54c4e414caa595a1f2ed759b160f5a3ddcba5"
 uuid = "08abe8d2-0d0c-5749-adfa-8a2ac140af0d"
-version = "1.2.3"
+version = "1.3.1"
 
 [[Printf]]
 deps = ["Unicode"]
@@ -479,7 +487,7 @@ deps = ["InteractiveUtils", "Markdown", "Sockets", "Unicode"]
 uuid = "3fa0cd96-eef1-5676-8a61-b3b8758bbffb"
 
 [[Random]]
-deps = ["Serialization"]
+deps = ["SHA", "Serialization"]
 uuid = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
 
 [[RecipesBase]]
@@ -562,29 +570,27 @@ version = "0.33.13"
 
 [[Stipple]]
 deps = ["FilePathsBase", "Genie", "JSON3", "Logging", "Mixers", "Observables", "OrderedCollections", "Parameters", "Pkg", "Random", "Reexport", "Requires", "StructTypes"]
-git-tree-sha1 = "274540e231c581f7c9fdb89aa32acb78db5d2072"
+path = "/Users/adrian/.julia/dev/Stipple"
 uuid = "4acbeb90-81a0-11ea-1966-bdaff8155998"
 version = "0.19.2"
 
 [[StippleCharts]]
 deps = ["DataFrames", "Genie", "Stipple"]
-git-tree-sha1 = "565d87223176d4def5cfce9dd3e381ffeb2d1a4f"
-repo-rev = "master"
-repo-url = "https://github.com/GenieFramework/StippleCharts.jl.git"
+path = "/Users/adrian/.julia/dev/StippleCharts"
 uuid = "30ddb3f0-912f-4f34-9804-e4bb31290777"
 version = "0.16.0"
 
 [[StipplePlotly]]
 deps = ["Genie", "Stipple"]
-git-tree-sha1 = "ca499e6ca28cf5b369aef5dba47992716743a9c0"
+path = "/Users/adrian/.julia/dev/StipplePlotly"
 uuid = "ec984513-233d-481d-95b0-a3b58b97af2b"
-version = "0.9.0"
+version = "0.9.1"
 
 [[StippleUI]]
 deps = ["Colors", "DataFrames", "Dates", "Genie", "Stipple"]
-git-tree-sha1 = "3e60a02c799297939f804c73f07177867044b629"
+path = "/Users/adrian/.julia/dev/StippleUI"
 uuid = "a3c5d34a-b254-4859-a8fa-b86abb7e84a3"
-version = "0.13.0"
+version = "0.14.0"
 
 [[StringEncodings]]
 deps = ["Libiconv_jll"]
@@ -700,6 +706,10 @@ version = "0.4.7"
 [[Zlib_jll]]
 deps = ["Libdl"]
 uuid = "83775a58-1f1d-513f-b197-d71354ab007a"
+
+[[libblastrampoline_jll]]
+deps = ["Artifacts", "Libdl", "OpenBLAS_jll"]
+uuid = "8e850b90-86db-534c-a0d3-1478176c7d93"
 
 [[nghttp2_jll]]
 deps = ["Artifacts", "Libdl"]
