@@ -3,7 +3,7 @@ using HistoController
 using DashboardsController
 
 route("/") do
-  html(:dashboards, :dashboards; layout=:app, context=DashboardsController, DashboardsController.render()...)
+  html(:dashboards, "dashboards.jl"; layout=:app, context=DashboardsController, DashboardsController.render()...)
 end
 
 route("/histo") do
