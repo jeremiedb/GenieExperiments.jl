@@ -44,7 +44,7 @@ function plot_data(group::Symbol, model::IrisModel)
     subdata = data[data[!, group].==s, :]
     if group == :Species
       push!(result, PlotData(x = subdata[:, model.xfeature[]], y = subdata[:, model.yfeature[]],
-        plot = "scatter", mode = "markers", marker=PlotDataMarker(color=iris_colors[s]), name = string(s)))
+        plot = "scatter", mode = "markers", marker = PlotDataMarker(color = iris_colors[s]), name = string(s)))
     else
       push!(result, PlotData(x = subdata[:, model.xfeature[]], y = subdata[:, model.yfeature[]],
         plot = "scatter", mode = "markers", name = string(s)))
