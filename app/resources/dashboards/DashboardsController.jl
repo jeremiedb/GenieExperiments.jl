@@ -24,7 +24,7 @@ const iris_colors = Dict(
   iris_plot_data::R{Vector{PlotData}} = PlotData[]   # PlotSeries is structure used to store data
   cluster_plot_data::R{Vector{PlotData}} = PlotData[]
 
-  # plot_layout and config: Plotly specific 
+  # plot_layout and config: Plotly specific
   plot_layout::PlotLayout = PlotLayout()
   plot_config::R{PlotConfig} = PlotConfig(displaylogo = false)
 
