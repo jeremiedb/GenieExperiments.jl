@@ -40,7 +40,6 @@ function handlers()
 end
 @page("/mini3", "ui.jl.html")
 Stipple.Pages.Page("/mini4", view = "ui.jl.html", model = handlers(), context = @__MODULE__)
-Stipple.Pages.Page("/mini5", view = "ui.jl.html", model = handlers(), context = @__MODULE__)
 end
 
 route("/") do
