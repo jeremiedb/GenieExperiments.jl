@@ -1,7 +1,7 @@
 name = "GenieExperiments"
 uuid = "db8b4d46-bfed-4aa5-a5f8-40df1e9542e5"
-authors = ["jeremie.db <jeremie.db@evovest.com>"]
-version = "0.1.2"
+authors = ["jeremie.db"]
+version = "0.2.0"
 
 [deps]
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
@@ -12,9 +12,8 @@ Genie = "c43c736e-a2d1-11e8-161f-af95117fbd1e"
 Inflector = "6d011eab-0732-4556-8808-e463c76bf3b6"
 Logging = "56ddb016-857b-54e1-b83d-db4d58db5568"
 LoggingExtras = "e6f89c97-d47a-5376-807f-9c37f3926c36"
-MbedTLS = "739be429-bea8-5141-9913-cc70e7f3736d"
 RDatasets = "ce6b1742-4840-55fa-b093-852dadbb1d8b"
 StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
 Stipple = "4acbeb90-81a0-11ea-1966-bdaff8155998"
-StippleCharts = "30ddb3f0-912f-4f34-9804-e4bb31290777"
+StipplePlotly = "ec984513-233d-481d-95b0-a3b58b97af2b"
 StippleUI = "a3c5d34a-b254-4859-a8fa-b86abb7e84a3"
