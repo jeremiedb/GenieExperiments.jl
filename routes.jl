@@ -1,23 +1,29 @@
 # using Genie
 # using Genie.Requests, Genie.Renderer, Genie.Router, Genie.Renderer.Html, Genie.Exceptions
 using Stipple
-# , StippleUI, StipplePlotly
-
-using GenieExperiments.DashboardsController
-using GenieExperiments.HistoController
 using GenieExperiments.MiniController
 
-route("/mini") do
+route("/mini1A") do
     html(
         :mini,
-        :ui;
+        :ui1;
         layout = :app,
         context = MiniController,
         Model = MiniController.handlers(),
     )
 end
+Stipple.Pages.Page("/mini1B", view = "/mini/views/ui1.jl.html", model = MiniController.handlers(), context = MiniController)
 
-Stipple.Pages.Page("/mini2", view = "/mini/views/ui.jl.html", model = MiniController.handlers(), context = MiniController)
+route("/mini2A") do
+    html(
+        :mini,
+        :ui2;
+        layout = :app,
+        context = MiniController,
+        Model = MiniController.handlers(),
+    )
+end
+Stipple.Pages.Page("/mini2B", view = "/mini/views/ui2.jl.html", model = MiniController.handlers(), context = MiniController)
 
 module App
 
@@ -28,19 +34,27 @@ using StippleUI
 @reactive mutable struct Model <: ReactiveModel
   name::R{String} = "MyName"
   item::R{String} = "allo"
-  item_options::R{Vector} = ["allo", "hello", "bonjour"]
+  item_options::R{Vector} = ["salut", "bonjour"]
 end
 
 function handlers()
-    m = Stipple.init(Model; core_theme = false)
+    m = Stipple.init(Model)
     on(m.isready) do _
         m.item = "hey!"
     end
     return m
 end
-@page("/mini3", "ui.jl.html")
-Stipple.Pages.Page("/mini4", view = "ui.jl.html", model = handlers(), context = @__MODULE__)
+@page("/mini3A", "ui1.jl.html")
+Stipple.Pages.Page("/mini3B", view = "ui1.jl.html", model = handlers(), context = @__MODULE__)
+
+@page("/mini4A", "ui2.jl.html")
+Stipple.Pages.Page("/mini4B", view = "ui2.jl.html", model = handlers(), context = @__MODULE__)
+
 end
+
+
+using GenieExperiments.DashboardsController
+using GenieExperiments.HistoController
 
 route("/") do
     html(
