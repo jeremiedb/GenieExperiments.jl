@@ -1,5 +1,6 @@
 using Genie
 using Genie.Requests, Genie.Router, Genie.Renderer, Genie.Renderer.Html
+
 using GenieExperiments.DemoController
 using GenieExperiments.DashboardsController
 using GenieExperiments.HistoController
@@ -9,6 +10,24 @@ route("/") do
         :demo,
         :ui;
         layout = :stipple_demo,
+        model = DemoController.init() |> DemoController.handlers,
+        context = DemoController,
+    )
+end
+
+route("/demo") do
+    html(
+        path"views/stipple/demo1.jl.html",
+        layout = path"layouts/stipple.jl.html",
+        model = DemoController.init() |> DemoController.handlers,
+        context = DemoController,
+    )
+end
+
+route("/markdown") do
+    html(
+        path"views/markdown/blog1.jl.md",
+        layout = path"layouts/markdown.jl.html",
         model = DemoController.init() |> DemoController.handlers,
         context = DemoController,
     )

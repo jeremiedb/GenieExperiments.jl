@@ -5,13 +5,17 @@ body {
     font-size: 16px;
 	letter-spacing: 0.8px; */
 }
-.row {
+.main-row {
+    padding-left: 4em !important;
+    padding-right: 4em !important;
+}
+/* .row { */
     /* padding: 0 0 0 0 !important; */
 	/* font-family: sans-serif;
     color: #404142;
     font-size: 16px;
 	letter-spacing: 0.8px; */
-}
+/* } */
 /* h1, h2, h3, h4, h5, h6 {
 	font-weight: 200;
 } */
@@ -22,7 +26,7 @@ body {
 	list-style: none;
 } */
 
-.btn {
+/* .btn {
 	text-transform: uppercase;
     font-weight: 600;
     font-size: 16px;
@@ -30,4 +34,4 @@ body {
     border-radius: 4px;
     background-color: #dd5138;
 	color: #fff;
-}
+} */
