@@ -1,5 +1,5 @@
-using Genie
-using Genie.Requests, Genie.Router, Genie.Renderer, Genie.Renderer.Html
+# using Genie
+using Genie.Requests, Genie.Router, Genie.Renderer.Html
 
 using GenieExperiments.DemoController
 using GenieExperiments.DashboardsController
@@ -24,12 +24,18 @@ route("/demo") do
     )
 end
 
-route("/markdown") do
+route("/md1") do
     html(
         path"views/markdown/blog1.jl.md",
         layout = path"layouts/markdown.jl.html",
-        model = DemoController.init() |> DemoController.handlers,
-        context = DemoController,
+        context = @__MODULE__,
+    )
+end
+
+route("/md2") do
+    html(
+        path"views/markdown/blog1.jl.md",
+        layout = path"layouts/markdown.jl.html",
     )
 end
 
