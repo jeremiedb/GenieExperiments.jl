@@ -5,6 +5,8 @@ using GenieExperiments.DemoController
 using GenieExperiments.DashboardsController
 using GenieExperiments.HistoController
 
+using GenieExperiments.UIDemoController
+
 route("/") do
     html(
         :demo,
@@ -21,6 +23,15 @@ route("/demo") do
         layout = path"layouts/stipple.jl.html",
         model = DemoController.init() |> DemoController.handlers,
         context = DemoController,
+    )
+end
+
+route("/uidemo") do
+    html(
+        path"app/resources/UIDemo/views/ui.jl.html",
+        layout = path"app/layouts/stipple_demo.jl.html",
+        model = UIDemoController.init() |> UIDemoController.handlers,
+        context = UIDemoController,
     )
 end
 

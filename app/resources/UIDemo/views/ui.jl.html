@@ -1,0 +1,82 @@
+<div class="row justify-evenly">
+    <div class="col-12 col-md-3">
+        <h3>Text input</h3>
+        <q-input v-model="input_text" label="Enter text" />
+        <h5>Value: {{input_text}}</h5>
+        <code>$(string(rand(Float32, 2)))</code>
+    </div>
+    <div class="col-12 col-md-3">
+        <h3>Numeric input</h3>
+        <q-input v-model.number="input_num" type="number" label="Enter a number" />
+        <h5>Value: {{input_num}}</h5>
+        <code>$(string(rand(Float32, 2)))</code>
+    </div>
+    <div class="col-12 col-md-3">
+        <h3>Select</h3>
+        <q-select v-model="item" :options="item_options" label="Select an item"></q-select>
+        <h5>Selected item: {{item}}</h5>
+        <code>$(string(rand(Float32, 2)))</code>
+    </div>
+    <div class="col-12 col-md-3">
+        <h3>Multi Select</h3>
+        <q-select v-model="items" multiple :options="item_options" label="Select multiple items"></q-select>
+        <h5>Selected items: {{items}}</h5>
+        <code>$(string(rand(Float32, 2)))</code>
+    </div>
+</div>
+
+<div class="row justify-evenly">
+    <div class="col-12 col-md-3">
+        <h3>Radio buttons</h3>
+        <q-radio v-model="radio_item" val="circle" label="Circle" />
+        <q-radio v-model="radio_item" val="triangle" label="Triangle" />
+        <q-radio v-model="radio_item" val="rectangle" label="Rectangle" />
+        <h5>Selected item: {{radio_item}}</h5>
+        <code>$(string(rand(Float32, 2)))</code>
+        <a href="https://v1.quasar.dev/vue-components/radio#standard">Reference</a>
+    </div>
+    <div class="col-12 col-md-3">
+        <h3>Checkbox</h3>
+        <q-checkbox v-model="checkbox_item" label="Label on Right" />
+        <h5>Checkbox value: {{checkbox_item}}</h5>
+        <code>$(string(rand(Float32, 2)))</code>
+         <a href="https://v1.quasar.dev/vue-components/checkbox#standard">Reference</a>
+    </div>
+    <div class="col-12 col-md-3">
+        <!-- <q-input v-model.number="input_num" type="number" label="Standard" /> -->
+        <!-- <h5>Input numeric: {{input_num}}</h5>
+        <code>$(string(rand(Float32, 2)))</code> -->
+    </div>
+    <div class="col-12 col-md-3">
+        <!-- <q-input v-model="date" filled type="date" hint="Native date" />
+        <h5>Input numeric: {{input_num}}</h5>
+        <code>$(string(rand(Float32, 2)))</code> -->
+    </div>
+</div>
+
+
+<div class="row justify-evenly">
+    <div class="col-12 col-md-3">
+        <h3>Date input</h3>
+        <q-input v-model="date" filled type="date" hint="Native date" />
+        <h5>Value: {{input_num}}</h5>
+        <code>$(string(rand(Float32, 2)))</code>
+    </div>
+    <div class="col-12 col-md-3">
+        <!-- <h3>Checkbox</h3>
+        <q-checkbox v-model="checkbox_item" label="Label on Right" />
+        <h5>Checkbox value: {{checkbox_item}}</h5>
+        <code>$(string(rand(Float32, 2)))</code>
+         <a href="https://v1.quasar.dev/vue-components/checkbox#standard">Reference</a> -->
+    </div>
+    <div class="col-12 col-md-3">
+        <!-- <q-input v-model.number="input_num" type="number" label="Standard" /> -->
+        <!-- <h5>Input numeric: {{input_num}}</h5>
+        <code>$(string(rand(Float32, 2)))</code> -->
+    </div>
+    <div class="col-12 col-md-3">
+        <!-- <q-input v-model="date" filled type="date" hint="Native date" />
+        <h5>Input numeric: {{input_num}}</h5>
+        <code>$(string(rand(Float32, 2)))</code> -->
+    </div>
+</div>
