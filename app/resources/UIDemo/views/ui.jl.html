@@ -1,23 +1,26 @@
+<div class="row menu">
+    <h2>Input fields and select</h2>
+</div>
 <div class="row justify-evenly">
-    <div class="col-12 col-md-3">
+    <div class="col-12 col-md-3 menu">
         <h3>Text input</h3>
         <q-input v-model="input_text" label="Enter text" />
-        <h5>Value: {{input_text}}</h5>
-        <code>$(string(rand(Float32, 2)))</code>
+        <h5>Input: {{input_text}}</h5>
+        <code>{{input_text_code}}</code>
     </div>
-    <div class="col-12 col-md-3">
+    <div class="col-12 col-md-3 menu">
         <h3>Numeric input</h3>
         <q-input v-model.number="input_num" type="number" label="Enter a number" />
-        <h5>Value: {{input_num}}</h5>
-        <code>$(string(rand(Float32, 2)))</code>
+        <h5>Input: {{input_num}}</h5>
+        <code>{{input_num_code}}</code>
     </div>
-    <div class="col-12 col-md-3">
+    <div class="col-12 col-md-3 menu">
         <h3>Select</h3>
         <q-select v-model="item" :options="item_options" label="Select an item"></q-select>
         <h5>Selected item: {{item}}</h5>
         <code>$(string(rand(Float32, 2)))</code>
     </div>
-    <div class="col-12 col-md-3">
+    <div class="col-12 col-md-3 menu">
         <h3>Multi Select</h3>
         <q-select v-model="items" multiple :options="item_options" label="Select multiple items"></q-select>
         <h5>Selected items: {{items}}</h5>
@@ -25,56 +28,79 @@
     </div>
 </div>
 
+<div class="row menu">
+    <h2>Radio, buttons and checkbox</h2>
+</div>
 <div class="row justify-evenly">
-    <div class="col-12 col-md-3">
+    <div class="col-12 col-md-3 menu">
         <h3>Radio buttons</h3>
         <q-radio v-model="radio_item" val="circle" label="Circle" />
         <q-radio v-model="radio_item" val="triangle" label="Triangle" />
         <q-radio v-model="radio_item" val="rectangle" label="Rectangle" />
         <h5>Selected item: {{radio_item}}</h5>
         <code>$(string(rand(Float32, 2)))</code>
-        <a href="https://v1.quasar.dev/vue-components/radio#standard">Reference</a>
+        <a href="https://v1.quasar.dev/vue-components/radio#standard" target="_blank">Reference</a>
     </div>
-    <div class="col-12 col-md-3">
+    <div class="col-12 col-md-3 menu">
         <h3>Checkbox</h3>
         <q-checkbox v-model="checkbox_item" label="Label on Right" />
         <h5>Checkbox value: {{checkbox_item}}</h5>
         <code>$(string(rand(Float32, 2)))</code>
-         <a href="https://v1.quasar.dev/vue-components/checkbox#standard">Reference</a>
+        <a href="https://v1.quasar.dev/vue-components/checkbox#standard" target="_blank">Reference</a>
     </div>
-    <div class="col-12 col-md-3">
-        <!-- <q-input v-model.number="input_num" type="number" label="Standard" /> -->
-        <!-- <h5>Input numeric: {{input_num}}</h5>
-        <code>$(string(rand(Float32, 2)))</code> -->
+    <div class="col-12 col-md-3 menu">
+        <h3>Button - switch value</h3>
+        <q-btn v-on:click="button_switch = !button_switch" color="positive" label="Positive" />
+        <h5>Button flag: {{button_switch}}</h5>
+        <a href="https://v1.quasar.dev/vue-components/button#standard" target="_blank">Reference</a>
     </div>
-    <div class="col-12 col-md-3">
-        <!-- <q-input v-model="date" filled type="date" hint="Native date" />
-        <h5>Input numeric: {{input_num}}</h5>
-        <code>$(string(rand(Float32, 2)))</code> -->
+    <div class="col-12 col-md-3 menu">
+        <h3>Button - reset to false</h3>
+        <q-btn v-on:click="button_reset = true" color="secondary" label="Secondary" />
+        <h5>Button flag: {{button_reset}}</h5>
+        <a href="https://v1.quasar.dev/vue-components/button#standard" target="_blank">Reference</a>
     </div>
 </div>
 
 
+<div class="row menu">
+    <h2>Dates</h2>
+</div>
 <div class="row justify-evenly">
-    <div class="col-12 col-md-3">
+    <div class="col-12 col-md-3 menu">
         <h3>Date input</h3>
-        <q-input v-model="date" filled type="date" hint="Native date" />
-        <h5>Value: {{input_num}}</h5>
+        <q-input v-model="input_date" filled type="date" hint="Native date" />
+        <h5>Selected date: {{input_date}}</h5>
         <code>$(string(rand(Float32, 2)))</code>
+        <a href="https://v1.quasar.dev/vue-components/input#input-types" target="_blank">Reference</a>
     </div>
-    <div class="col-12 col-md-3">
-        <!-- <h3>Checkbox</h3>
-        <q-checkbox v-model="checkbox_item" label="Label on Right" />
-        <h5>Checkbox value: {{checkbox_item}}</h5>
+    <div class="col-12 col-md-3 menu">
+        <h3>Date picker</h3>
+        <q-date v-model="date_picker" minimal />
+        <h5>Selected date: {{date_picker}}</h5>
         <code>$(string(rand(Float32, 2)))</code>
-         <a href="https://v1.quasar.dev/vue-components/checkbox#standard">Reference</a> -->
+        <a href="https://v1.quasar.dev/vue-components/date#basic" target="_blank">Reference</a>
     </div>
-    <div class="col-12 col-md-3">
-        <!-- <q-input v-model.number="input_num" type="number" label="Standard" /> -->
-        <!-- <h5>Input numeric: {{input_num}}</h5>
-        <code>$(string(rand(Float32, 2)))</code> -->
+    <div class="col-12 col-md-3 menu">
+        <h3>Date picker from input</h3>
+        <q-input filled v-model="date_picker_input" mask="date" :rules="['date']">
+            <template v-slot:append>
+                <q-icon name="event" class="cursor-pointer">
+                    <q-popup-proxy ref="qDateProxy" transition-show="scale" transition-hide="scale">
+                        <q-date v-model="date_picker_input">
+                            <div class="row items-center justify-end">
+                                <q-btn v-close-popup label="Close" color="primary" flat />
+                            </div>
+                        </q-date>
+                    </q-popup-proxy>
+                </q-icon>
+            </template>
+        </q-input>
+        <h5>Selected date: {{date_picker_input}}</h5>
+        <code>$(string(rand(Float32, 2)))</code>
+        <a href="https://v1.quasar.dev/vue-components/date#with-qinput" target="_blank">Reference</a>
     </div>
-    <div class="col-12 col-md-3">
+    <div class="col-12 col-md-3 menu">
         <!-- <q-input v-model="date" filled type="date" hint="Native date" />
         <h5>Input numeric: {{input_num}}</h5>
         <code>$(string(rand(Float32, 2)))</code> -->
