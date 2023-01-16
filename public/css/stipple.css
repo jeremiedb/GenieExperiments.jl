@@ -5,6 +5,16 @@ body {
     font-size: 16px;
 	letter-spacing: 0.8px; */
 }
+
+.dash-header {
+    color: #F5EFE8 !important;
+    background-color: #008877;
+    font-weight: normal !important;
+    padding-top: 0em;
+    padding-left: 2em;
+    padding-bottom: 1em;
+}
+
 .main-row {
     padding-left: 4em !important;
     padding-right: 4em !important;

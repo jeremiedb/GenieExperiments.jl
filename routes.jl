@@ -1,28 +1,16 @@
 # using Genie
 using Genie.Requests, Genie.Router, Genie.Renderer.Html
 
-using GenieExperiments.DemoController
-using GenieExperiments.DashboardsController
-using GenieExperiments.HistoController
-
 using GenieExperiments.UIDemoController
+using GenieExperiments.IrisController
 
 route("/") do
     html(
-        :demo,
+        :UIDemo,
         :ui;
         layout = :stipple_demo,
-        model = DemoController.init() |> DemoController.handlers,
-        context = DemoController,
-    )
-end
-
-route("/demo") do
-    html(
-        path"views/stipple/demo1.jl.html",
-        layout = path"layouts/stipple.jl.html",
-        model = DemoController.init() |> DemoController.handlers,
-        context = DemoController,
+        model = UIDemoController.init() |> UIDemoController.handlers,
+        context = UIDemoController,
     )
 end
 
@@ -35,37 +23,27 @@ route("/uidemo") do
     )
 end
 
-route("/md1") do
-    html(
-        path"views/markdown/blog1.jl.md",
-        layout = path"layouts/markdown.jl.html",
-        context = @__MODULE__,
-    )
-end
+# route("/md1") do
+#     html(
+#         path"views/markdown/blog1.jl.md",
+#         layout = path"layouts/markdown.jl.html",
+#         context = @__MODULE__,
+#     )
+# end
 
-route("/md2") do
-    html(
-        path"views/markdown/blog1.jl.md",
-        layout = path"layouts/markdown.jl.html",
-    )
-end
+# route("/md2") do
+#     html(
+#         path"views/markdown/blog1.jl.md",
+#         layout = path"layouts/markdown.jl.html",
+#     )
+# end
 
 route("/iris") do
     html(
         :dashboards,
         "dashboards.jl";
         layout = :app,
-        context = DashboardsController,
-        DashboardsController.render()...,
-    )
-end
-
-route("/hist") do
-    html(
-        :histo,
-        "histo.jl";
-        layout = :app,
-        context = HistoController,
-        HistoController.render()...,
+        context = IrisController,
+        IrisController.render()...,
     )
 end

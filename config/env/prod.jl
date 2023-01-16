@@ -1,7 +1,7 @@
 using Genie.Configuration, Logging
 
 const config = Settings(
-  server_port                     = 8000,
+  server_port                     = 8002,
   server_host                     = "0.0.0.0",
   log_level                       = Logging.Error,
   log_to_file                     = false,
