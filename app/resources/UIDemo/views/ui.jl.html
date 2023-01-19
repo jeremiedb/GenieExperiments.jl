@@ -1,5 +1,7 @@
-<div class="row dash-header">
-    <h2>Stipple UI gallery</h2>
+<div class="dash-header row">
+    <!-- <div class="row dash-header"> -->
+    <h2 class="dash-header">Stipple UI gallery</h2>
+    <!-- </div> -->
 </div>
 
 <div class="row menu">
@@ -11,30 +13,32 @@
         <q-input v-model="input_text" label="Enter text" />
         <h5>Input: {{input_text}}</h5>
         <code>{{input_text_code}}</code>
+        <a href="https://v1.quasar.dev/vue-components/input#design" target="_blank">Reference</a>
     </div>
     <div class="col-12 col-md-3 menu">
         <h3>Numeric input</h3>
         <q-input v-model.number="input_num" type="number" label="Enter a number" />
         <h5>Input: {{input_num}}</h5>
         <code>{{input_num_code}}</code>
+        <a href="https://v1.quasar.dev/vue-components/input#input-of-number-type" target="_blank">Reference</a>
     </div>
     <div class="col-12 col-md-3 menu">
         <h3>Select</h3>
         <q-select v-model="item" :options="item_options" label="Select an item"></q-select>
         <h5>Selected item: {{item}}</h5>
-        <code>$(string(rand(Float32, 2)))</code>
+        <a href="https://v1.quasar.dev/vue-components/select#the-model" target="_blank">Reference</a>
     </div>
     <div class="col-12 col-md-3 menu">
         <h3>Multi Select</h3>
         <q-select v-model="items" multiple :options="item_options" label="Select multiple items"></q-select>
         <h5>Selected items: {{items}}</h5>
-        <code>$(string(rand(Float32, 2)))</code>
+        <a href="https://v1.quasar.dev/vue-components/select#the-model" target="_blank">Reference</a>
     </div>
 </div>
 
 <hr>
 <div class="row menu">
-    <h2>Radio, buttons and checkbox</h2>
+    <h2>Radio buttons, checkbox and sliders</h2>
 </div>
 <div class="row justify-evenly">
     <div class="col-12 col-md-3 menu">
@@ -43,16 +47,33 @@
         <q-radio v-model="radio_item" val="triangle" label="Triangle" />
         <q-radio v-model="radio_item" val="rectangle" label="Rectangle" />
         <h5>Selected item: {{radio_item}}</h5>
-        <code>$(string(rand(Float32, 2)))</code>
         <a href="https://v1.quasar.dev/vue-components/radio#standard" target="_blank">Reference</a>
     </div>
     <div class="col-12 col-md-3 menu">
         <h3>Checkbox</h3>
         <q-checkbox v-model="checkbox_item" label="Label on Right" />
         <h5>Checkbox value: {{checkbox_item}}</h5>
-        <code>$(string(rand(Float32, 2)))</code>
         <a href="https://v1.quasar.dev/vue-components/checkbox#standard" target="_blank">Reference</a>
     </div>
+    <div class="col-12 col-md-3 menu">
+        <h3>Slider</h3>
+        <q-slider v-model="slider" :min="0" :max="50" />
+        <h5>Slider value: {{slider}}</h5>
+        <a href="https://v1.quasar.dev/vue-components/slider#standard" target="_blank">Reference</a>
+    </div>
+    <div class="col-12 col-md-3 menu">
+        <h3>Range</h3>
+        <q-range v-model="range" :min="0" :max="50" />
+        <h5>Range values: {{range}}</h5>
+        <a href="https://v1.quasar.dev/vue-components/range#standard" target="_blank">Reference</a>
+    </div>
+</div>
+
+<hr>
+<div class="row menu">
+    <h2>Buttons and toggles</h2>
+</div>
+<div class="row justify-evenly">
     <div class="col-12 col-md-3 menu">
         <h3>Button - switch value</h3>
         <q-btn v-on:click="button_switch = !button_switch" color="positive" label="Positive" />
@@ -65,7 +86,34 @@
         <h5>Button flag: {{button_reset}}</h5>
         <a href="https://v1.quasar.dev/vue-components/button#standard" target="_blank">Reference</a>
     </div>
+    <!-- <div class="col-12 col-md-3 menu">
+        <h3>Button toggle</h3>
+        <q-btn-toggle v-model="button_toggle" toggle-color="warning" :options="[
+          {label: 'One', value: 'one'},
+          {label: 'Two', value: 'two'},
+          {label: 'Three', value: 'three'}
+        ]" />
+        <h5>Button flag: {{button_reset}}</h5>
+        <a href="https://v1.quasar.dev/vue-components/button-toggle#basic" target="_blank">Reference</a>
+    </div> -->
+    <div class="col-12 col-md-3 menu">
+        <h3>Toggle</h3>
+        <q-toggle v-model="toggle" label="On left" left-label />
+        <h5>Toggle value: {{toggle}}</h5>
+        <a href="https://v1.quasar.dev/vue-components/toggle#basic" target="_blank">Reference</a>
+    </div>
+    <div class="col-12 col-md-3 menu">
+        <h3>Toggle Array</h3>
+        <q-toggle color="yellow" label="Yellow" v-model="toggle_array" val="yellow" />
+        <q-toggle color="green" label="Green" v-model="toggle_array" val="green" />
+        <q-toggle color="red" label="Red" v-model="toggle_array" val="red" />
+        <h5>Toggle array value: {{toggle_array}}</h5>
+        <a href="https://v1.quasar.dev/vue-components/toggle#array-model" target="_blank">Reference</a>
+    </div>
+
+
 </div>
+
 
 <hr>
 <div class="row menu">
@@ -76,14 +124,12 @@
         <h3>Date input</h3>
         <q-input v-model="input_date" filled type="date" hint="Native date" />
         <h5>Selected date: {{input_date}}</h5>
-        <code>$(string(rand(Float32, 2)))</code>
         <a href="https://v1.quasar.dev/vue-components/input#input-types" target="_blank">Reference</a>
     </div>
     <div class="col-12 col-md-3 menu">
         <h3>Date picker</h3>
         <q-date v-model="date_picker" minimal />
         <h5>Selected date: {{date_picker}}</h5>
-        <code>$(string(rand(Float32, 2)))</code>
         <a href="https://v1.quasar.dev/vue-components/date#basic" target="_blank">Reference</a>
     </div>
     <div class="col-12 col-md-3 menu">
@@ -102,7 +148,6 @@
             </template>
         </q-input>
         <h5>Selected date: {{date_picker_input}}</h5>
-        <code>$(string(rand(Float32, 2)))</code>
         <a href="https://v1.quasar.dev/vue-components/date#with-qinput" target="_blank">Reference</a>
     </div>
     <div class="col-12 col-md-3 menu">

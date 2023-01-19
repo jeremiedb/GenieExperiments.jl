@@ -15,6 +15,11 @@ body {
     padding-bottom: 1em;
 }
 
+/* h2.dash-header {
+    color: #F5EFE8 !important;
+    font-weight: normal;
+} */
+
 .main-row {
     padding-left: 4em !important;
     padding-right: 4em !important;

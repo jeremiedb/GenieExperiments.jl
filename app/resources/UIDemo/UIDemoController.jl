@@ -12,7 +12,6 @@ using Dates
     input_text_code::String = "<q-input v-model=\"input_text\" label=\"Enter text\" />"
     input_num::R{Real} = 0
     input_num_code::String = "<q-input v-model.number=\"input_num\" type=\"number\" label=\"Enter a number\" />"
-
     # select
     item::R{String} = ""
     items::R{Vector{String}} = []
@@ -21,13 +20,20 @@ using Dates
     # radio - checkbox - buttons
     radio_item::R{String} = "circle"
     checkbox_item::R{Bool} = false
+    slider::R{Int} = 10
+    range::R{Vector{Int}} = [10, 20]
+
+    # buttons and toggle
     button_switch::R{Bool} = false
     button_reset::R{Bool} = false
+    button_toggle::R{String} = "two" # not implemented in Stipple yet
+    toggle::R{Bool} = false
+    toggle_array::R{Vector{String}} = ["red"] # not implemented in Stipple yet
 
     # dates
-    input_date::R{String} = "2022-01-21"
-    date_picker::R{String} = "2022/01/22"
-    date_picker_input::R{String} = "2022/01/23"
+    input_date::R{String} = "2022-01-21" # "-" separator is important
+    date_picker::R{String} = "2022/01/22" # "/" separator is important
+    date_picker_input::R{String} = "2022/01/23" # "/" separator is important
 
     flag::R{Bool} = false
 end
