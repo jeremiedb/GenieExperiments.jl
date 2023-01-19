@@ -6,10 +6,10 @@
   <% Stipple.sesstoken() %>
     <title>Stipple App Demo</title>
     <% Genie.Assets.favicon_support() %>
+    <link rel="stylesheet" href="/css/stipple.css">
 </head>
 
 <body>
-  <link rel="stylesheet" href="/css/stipple.css">
   <% page(model, partial=false, core_theme=true, [@yield]) %>
 </body>
 
