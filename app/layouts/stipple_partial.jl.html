@@ -4,14 +4,13 @@
 <head>
   <meta charset="utf-8">
   <% Stipple.sesstoken() %>
-    <title>Stipple App Demo</title>
+    <title>Stipple Patial Demo</title>
     <% Genie.Assets.favicon_support() %>
-      <link rel="stylesheet" href="/css/stipple.css">
 </head>
 
 <body>
+  <link rel="stylesheet" href="/css/stipple.css">
   <% page(model, partial=true, core_theme=true, [@yield]) %>
 </body>
-<!-- <script src="/js/app.js"></script> -->
 
 </html>
