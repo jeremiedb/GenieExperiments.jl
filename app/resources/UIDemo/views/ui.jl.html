@@ -1,13 +1,11 @@
 <div class="dash-header row">
-    <!-- <div class="row dash-header"> -->
     <h2 class="dash-header">Stipple UI gallery</h2>
-    <!-- </div> -->
 </div>
 
 <div class="row menu">
     <h2>Input fields and select</h2>
 </div>
-<div class="row justify-evenly">
+<div class="row">
     <div class="col-12 col-md-3 menu">
         <h3>Text input</h3>
         <q-input v-model="input_text" label="Enter text" />
@@ -35,6 +33,7 @@
         <a href="https://v1.quasar.dev/vue-components/select#the-model" target="_blank">Reference</a>
     </div>
 </div>
+
 
 <hr>
 <div class="row menu">
@@ -86,16 +85,6 @@
         <h5>Button flag: {{button_reset}}</h5>
         <a href="https://v1.quasar.dev/vue-components/button#standard" target="_blank">Reference</a>
     </div>
-    <!-- <div class="col-12 col-md-3 menu">
-        <h3>Button toggle</h3>
-        <q-btn-toggle v-model="button_toggle" toggle-color="warning" :options="[
-          {label: 'One', value: 'one'},
-          {label: 'Two', value: 'two'},
-          {label: 'Three', value: 'three'}
-        ]" />
-        <h5>Button flag: {{button_reset}}</h5>
-        <a href="https://v1.quasar.dev/vue-components/button-toggle#basic" target="_blank">Reference</a>
-    </div> -->
     <div class="col-12 col-md-3 menu">
         <h3>Toggle</h3>
         <q-toggle v-model="toggle" label="On left" left-label />
@@ -110,16 +99,13 @@
         <h5>Toggle array value: {{toggle_array}}</h5>
         <a href="https://v1.quasar.dev/vue-components/toggle#array-model" target="_blank">Reference</a>
     </div>
-
-
 </div>
-
 
 <hr>
 <div class="row menu">
     <h2>Dates</h2>
 </div>
-<div class="row justify-evenly">
+<div class="row">
     <div class="col-12 col-md-3 menu">
         <h3>Date input</h3>
         <q-input v-model="input_date" filled type="date" hint="Native date" />
@@ -150,9 +136,6 @@
         <h5>Selected date: {{date_picker_input}}</h5>
         <a href="https://v1.quasar.dev/vue-components/date#with-qinput" target="_blank">Reference</a>
     </div>
-    <div class="col-12 col-md-3 menu">
-        <!-- <q-input v-model="date" filled type="date" hint="Native date" />
-        <h5>Input numeric: {{input_num}}</h5>
-        <code>$(string(rand(Float32, 2)))</code> -->
-    </div>
+</div>
+
 </div>
