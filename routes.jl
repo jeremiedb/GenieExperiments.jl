@@ -3,6 +3,7 @@ using Genie.Requests, Genie.Router, Genie.Renderer.Html
 
 using GenieExperiments.UIDemoController
 using GenieExperiments.IrisController
+using GenieExperiments.PlotDemoController
 
 route("/") do
     html(
@@ -11,6 +12,15 @@ route("/") do
         layout = :stipple_demo,
         model = UIDemoController.init() |> UIDemoController.handlers,
         context = UIDemoController,
+    )
+end
+
+route("/plotdemo") do
+    html(
+        path"app/resources/UIDemo/views/plot.jl.html",
+        layout = path"app/layouts/stipple_demo.jl.html",
+        model = PlotDemoController.init() |> PlotDemoController.handlers,
+        context = PlotDemoController,
     )
 end
 

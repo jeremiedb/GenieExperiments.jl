@@ -1,6 +1,6 @@
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.8.4"
+julia_version = "1.8.5"
 manifest_format = "2.0"
 project_hash = "3fd727d0bf0581b581185af3d8ec5a466247bbe9"
 
@@ -45,15 +45,15 @@ version = "0.10.7"
 
 [[deps.ChainRulesCore]]
 deps = ["Compat", "LinearAlgebra", "SparseArrays"]
-git-tree-sha1 = "e7ff6cadf743c098e08fca25c91103ee4303c9bb"
+git-tree-sha1 = "c6d890a52d2c4d55d326439580c3b8d0875a77d9"
 uuid = "d360d2e6-b24c-11e9-a2a3-2a2ae2dbcce4"
-version = "1.15.6"
+version = "1.15.7"
 
 [[deps.ChangesOfVariables]]
 deps = ["ChainRulesCore", "LinearAlgebra", "Test"]
-git-tree-sha1 = "38f7a08f19d8810338d4f5085211c7dfa5d5bdd8"
+git-tree-sha1 = "844b061c104c408b24537482469400af6075aae4"
 uuid = "9e997f8a-9a97-42d5-a9f1-ce6bfc15e2c0"
-version = "0.1.4"
+version = "0.1.5"
 
 [[deps.Clustering]]
 deps = ["Distances", "LinearAlgebra", "NearestNeighbors", "Printf", "Random", "SparseArrays", "Statistics", "StatsBase"]
@@ -62,10 +62,10 @@ uuid = "aaaa29a8-35af-508c-8bc3-b662a17a0fe5"
 version = "0.14.3"
 
 [[deps.Cobweb]]
-deps = ["DefaultApplication", "Markdown", "Scratch", "StructTypes"]
-git-tree-sha1 = "8d7424cdf54a42eedf9b8d6c6fa10a7a361b4029"
+deps = ["DefaultApplication", "Markdown", "Random", "Scratch", "StructTypes"]
+git-tree-sha1 = "771d8bf069ecf8b751eda10e8af1ec0ea7589a64"
 uuid = "ec354790-cf28-43e8-bb59-b484409b7bad"
-version = "0.2.3"
+version = "0.2.4"
 
 [[deps.CodeTracking]]
 deps = ["InteractiveUtils", "UUIDs"]
@@ -75,9 +75,9 @@ version = "1.2.0"
 
 [[deps.CodecZlib]]
 deps = ["TranscodingStreams", "Zlib_jll"]
-git-tree-sha1 = "ded953804d019afa9a3f98981d99b33e3db7b6da"
+git-tree-sha1 = "9c209fb7536406834aa938fb149964b985de6c83"
 uuid = "944b1d66-785c-5afd-91f1-9de20f533193"
-version = "0.7.0"
+version = "0.7.1"
 
 [[deps.ColorSchemes]]
 deps = ["ColorTypes", "ColorVectorSpace", "Colors", "FixedPointNumbers", "Random", "SnoopPrecompile"]
@@ -104,10 +104,10 @@ uuid = "5ae59095-9a9b-59fe-a467-6f913c188581"
 version = "0.12.10"
 
 [[deps.CommonMark]]
-deps = ["Crayons", "JSON", "URIs"]
-git-tree-sha1 = "86cce6fd164c26bad346cc51ca736e692c9f553c"
+deps = ["Crayons", "JSON", "SnoopPrecompile", "URIs"]
+git-tree-sha1 = "e2f4627b0d3f2c1876360e0b242a7c23923b469d"
 uuid = "a80b9123-70ca-4bc0-993e-6e3bcb318db6"
-version = "0.8.7"
+version = "0.8.10"
 
 [[deps.Compat]]
 deps = ["Dates", "LinearAlgebra", "UUIDs"]
@@ -242,9 +242,9 @@ version = "6.2.1+2"
 
 [[deps.Genie]]
 deps = ["ArgParse", "Dates", "Distributed", "DotEnv", "EzXML", "FilePathsBase", "HTTP", "HttpCommon", "Inflector", "JSON3", "JuliaFormatter", "Logging", "LoggingExtras", "Markdown", "Millboard", "Nettle", "OrderedCollections", "Pkg", "REPL", "Random", "Reexport", "Revise", "SHA", "Serialization", "Sockets", "UUIDs", "Unicode", "YAML"]
-git-tree-sha1 = "4b132cd173525b1a4d84e349b8e189001a16a07c"
+git-tree-sha1 = "4f01c5c98021434dd986964a522f2f3ee616fe19"
 uuid = "c43c736e-a2d1-11e8-161f-af95117fbd1e"
-version = "5.13.0"
+version = "5.14.0"
 
 [[deps.GenieSession]]
 deps = ["Dates", "Genie", "HTTP", "Logging", "Random", "SHA"]
@@ -265,9 +265,9 @@ version = "1.3.0"
 
 [[deps.HTTP]]
 deps = ["Base64", "CodecZlib", "Dates", "IniFile", "Logging", "LoggingExtras", "MbedTLS", "NetworkOptions", "OpenSSL", "Random", "SimpleBufferStream", "Sockets", "URIs", "UUIDs"]
-git-tree-sha1 = "fd9861adba6b9ae4b42582032d0936d456c8602d"
+git-tree-sha1 = "37e4657cd56b11abe3d10cd4a1ec5fbdb4180263"
 uuid = "cd3eb016-35fb-5094-929b-558a96fad6f3"
-version = "1.6.3"
+version = "1.7.4"
 
 [[deps.HttpCommon]]
 deps = ["Dates", "Nullables", "Test", "URIParser"]
@@ -288,9 +288,9 @@ version = "0.5.1"
 
 [[deps.InlineStrings]]
 deps = ["Parsers"]
-git-tree-sha1 = "0cf92ec945125946352f3d46c96976ab972bde6f"
+git-tree-sha1 = "9cc2baf75c6d09f9da536ddf58eb2f29dedaf461"
 uuid = "842dd82b-1e85-43dc-bf29-5d0ee9dffc48"
-version = "1.3.2"
+version = "1.4.0"
 
 [[deps.InteractiveUtils]]
 deps = ["Markdown"]
@@ -336,10 +336,10 @@ uuid = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
 version = "1.12.0"
 
 [[deps.JuliaFormatter]]
-deps = ["CSTParser", "CommonMark", "DataStructures", "Glob", "Pkg", "Tokenize"]
-git-tree-sha1 = "447f5702b5271d99f064e924061bc05e26f52c4c"
+deps = ["CSTParser", "CommonMark", "DataStructures", "Glob", "Pkg", "SnoopPrecompile", "Tokenize"]
+git-tree-sha1 = "94ce68aee6dbc066e39d5d2ca0b6b1ccd38d7e04"
 uuid = "98e50ef6-434e-11e9-1051-2b60c6c9e899"
-version = "1.0.18"
+version = "1.0.20"
 
 [[deps.JuliaInterpreter]]
 deps = ["CodeTracking", "InteractiveUtils", "Random", "UUIDs"]
@@ -390,9 +390,9 @@ uuid = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
 
 [[deps.LogExpFunctions]]
 deps = ["ChainRulesCore", "ChangesOfVariables", "DocStringExtensions", "InverseFunctions", "IrrationalConstants", "LinearAlgebra"]
-git-tree-sha1 = "946607f84feb96220f480e0422d3484c49c00239"
+git-tree-sha1 = "45b288af6956e67e621c5cbb2d75a261ab58300b"
 uuid = "2ab3a3ac-af41-5b50-aa03-7779005ae688"
-version = "0.3.19"
+version = "0.3.20"
 
 [[deps.Logging]]
 uuid = "56ddb016-857b-54e1-b83d-db4d58db5568"
@@ -504,9 +504,9 @@ version = "0.8.1+0"
 
 [[deps.OpenSSL]]
 deps = ["BitFlags", "Dates", "MozillaCACerts_jll", "OpenSSL_jll", "Sockets"]
-git-tree-sha1 = "df6830e37943c7aaa10023471ca47fb3065cc3c4"
+git-tree-sha1 = "6503b77492fd7fcb9379bf73cd31035670e3c509"
 uuid = "4d8831e6-92b7-49fb-bdf8-b643e874388c"
-version = "1.3.2"
+version = "1.3.3"
 
 [[deps.OpenSSL_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
@@ -533,9 +533,9 @@ version = "0.12.3"
 
 [[deps.Parsers]]
 deps = ["Dates", "SnoopPrecompile"]
-git-tree-sha1 = "6466e524967496866901a78fca3f2e9ea445a559"
+git-tree-sha1 = "8175fc2b118a3755113c8e68084dc1a9e63c61ee"
 uuid = "69de0a69-1ddd-5017-9359-2bf0b02dc9f0"
-version = "2.5.2"
+version = "2.5.3"
 
 [[deps.Pkg]]
 deps = ["Artifacts", "Dates", "Downloads", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "REPL", "Random", "SHA", "Serialization", "TOML", "Tar", "UUIDs", "p7zip_jll"]
@@ -550,9 +550,9 @@ version = "0.8.19"
 
 [[deps.PlotlyLight]]
 deps = ["Artifacts", "Cobweb", "DefaultApplication", "Downloads", "EasyConfig", "JSON3", "Random", "StructTypes"]
-git-tree-sha1 = "ddc7784c88f66b1953d33d89f40ee7113cdf8368"
+git-tree-sha1 = "4d40350ef9a48533b85018af67089146cc2aeb6e"
 uuid = "ca7969ec-10b3-423e-8d99-40f33abb42bf"
-version = "0.6.0"
+version = "0.6.1"
 
 [[deps.PooledArrays]]
 deps = ["DataAPI", "Future"]
@@ -631,9 +631,9 @@ version = "1.1.1"
 
 [[deps.SentinelArrays]]
 deps = ["Dates", "Random"]
-git-tree-sha1 = "efd23b378ea5f2db53a55ae53d3133de4e080aa9"
+git-tree-sha1 = "c02bd3c9c3fc8463d3591a62a378f90d2d8ab0f3"
 uuid = "91c51154-3ec4-41a3-a24f-3f23e20d615c"
-version = "1.3.16"
+version = "1.3.17"
 
 [[deps.Serialization]]
 uuid = "9e88b42a-f829-5b0c-bbe9-9e923198166b"
@@ -644,9 +644,10 @@ uuid = "777ac1f9-54b0-4bf8-805c-2214025038e7"
 version = "1.1.0"
 
 [[deps.SnoopPrecompile]]
-git-tree-sha1 = "f604441450a3c0569830946e5b33b78c928e1a85"
+deps = ["Preferences"]
+git-tree-sha1 = "e760a70afdcd461cf01a575947738d359234665c"
 uuid = "66db9d55-30c0-4569-8b51-7e840670fc0c"
-version = "1.0.1"
+version = "1.0.3"
 
 [[deps.Sockets]]
 uuid = "6462fe0b-24de-5631-8697-dd941f90decc"
@@ -696,9 +697,9 @@ version = "0.33.21"
 
 [[deps.Stipple]]
 deps = ["Dates", "FilePathsBase", "Genie", "GenieSession", "GenieSessionFileSession", "JSON3", "Logging", "MacroTools", "Mixers", "Observables", "OrderedCollections", "Parameters", "Pkg", "Random", "Reexport", "Requires", "StructTypes"]
-git-tree-sha1 = "0bd4896078efbaaf6b250555351ecae375680e9b"
+git-tree-sha1 = "d5e3f1eb209c9616e9e05dcef40c3d6da9c81263"
 uuid = "4acbeb90-81a0-11ea-1966-bdaff8155998"
-version = "0.25.15"
+version = "0.25.17"
 
 [[deps.StipplePlotly]]
 deps = ["DataFrames", "Genie", "Requires", "Stipple"]
@@ -714,9 +715,9 @@ version = "0.21.2"
 
 [[deps.StringEncodings]]
 deps = ["Libiconv_jll"]
-git-tree-sha1 = "50ccd5ddb00d19392577902f0079267a72c5ab04"
+git-tree-sha1 = "33c0da881af3248dafefb939a21694b97cfece76"
 uuid = "69024149-9ee7-55f6-a4c4-859efe599b68"
-version = "0.3.5"
+version = "0.3.6"
 
 [[deps.StringManipulation]]
 git-tree-sha1 = "46da2434b41f41ac3594ee9816ce5541c6096123"
