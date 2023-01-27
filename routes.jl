@@ -1,37 +1,77 @@
-using Genie
-using Genie.Requests, Genie.Renderer, Genie.Router, Genie.Renderer.Html, Genie.Exceptions
-# using Stipple, StippleUI, StipplePlotly
+# using Genie
+using Genie.Requests, Genie.Router, Genie.Renderer.Html
 
-using GenieExperiments.DashboardsController
-using GenieExperiments.HistoController
-using GenieExperiments.MiniController
+using GenieExperiments.UIDemoController
+using GenieExperiments.IrisController
+using GenieExperiments.PlotDemoController
 
-route("/mini") do
+route("/") do
     html(
-        :mini,
+        :UIDemo,
         :ui;
-        layout = :app,
-        context = MiniController,
-        Model = MiniController.handlers(),
+        layout = :stipple_demo,
+        model = UIDemoController.init() |> UIDemoController.handlers,
+        context = UIDemoController,
     )
 end
 
-route("/") do
+route("/plotdemo") do
+    html(
+        path"app/resources/UIDemo/views/plot.jl.html",
+        layout = path"app/layouts/stipple_demo.jl.html",
+        model = PlotDemoController.init() |> PlotDemoController.handlers,
+        context = PlotDemoController,
+    )
+end
+
+route("/uidemo1") do
+    html(
+        path"app/resources/UIDemo/views/ui.jl.html",
+        layout = path"app/layouts/stipple_demo.jl.html",
+        model = UIDemoController.init() |> UIDemoController.handlers,
+        context = UIDemoController,
+    )
+end
+
+route("/uidemo2") do
+    html(
+        path"app/resources/UIDemo/views/ui.jl.html",
+        layout = path"app/layouts/stipple_partial.jl.html",
+        model = UIDemoController.init() |> UIDemoController.handlers,
+        context = UIDemoController,
+    )
+end
+
+route("/uidemo3") do
+    html(
+        path"app/resources/UIDemo/views/ui.jl.html",
+        layout = path"app/layouts/stipple_layout.jl.html",
+        model = UIDemoController.init() |> UIDemoController.handlers,
+        context = UIDemoController,
+    )
+end
+
+route("/md1") do
+    html(
+        path"app/resources/blog/views/blog1.jl.md",
+        layout = path"app/layouts/blog.jl.html",
+        context = @__MODULE__,
+    )
+end
+
+route("/md2") do
+    html(
+        path"app/resources/blog/views/blog1.jl.md",
+        layout = path"app/layouts/blog.jl.html",
+    )
+end
+
+route("/iris") do
     html(
         :dashboards,
         "dashboards.jl";
         layout = :app,
-        context = DashboardsController,
-        DashboardsController.render()...,
-    )
-end
-
-route("/hist") do
-    html(
-        :histo,
-        "histo.jl";
-        layout = :app,
-        context = HistoController,
-        HistoController.render()...,
+        context = IrisController,
+        IrisController.render()...,
     )
 end

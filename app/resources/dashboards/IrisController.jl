@@ -1,4 +1,4 @@
-module DashboardsController
+module IrisController
 
 using Stipple, StippleUI, StipplePlotly
 

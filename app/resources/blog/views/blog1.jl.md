@@ -1,0 +1,3 @@
+# 🔥First blog post
+
+Hello!

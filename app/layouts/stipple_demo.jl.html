@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <% Stipple.sesstoken() %>
+    <title>Stipple App Demo</title>
+    <% Genie.Assets.favicon_support() %>
+      <link rel="stylesheet" href="/css/stipple.css">
+      <!-- <script src="https://cdn.plot.ly/plotly-2.18.0.min.js"></script> -->
+</head>
+
+<body>
+  <% page(model, partial=false, core_theme=true, [@yield]) %>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+  <% Stipple.sesstoken() %>
+    <title>Stipple Partial Demo</title>
+    <% Genie.Assets.favicon_support() %>
+    <link rel="stylesheet" href="/css/stipple.css">
+</head>
+
+<body>
+  <% page(model, partial=true, core_theme=true, [@yield]) %>
+</body>
+
+</html>
