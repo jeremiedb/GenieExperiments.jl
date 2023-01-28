@@ -8,15 +8,35 @@
 </div>
 
 <div class="row menu">
+    <h2>StipplePlotly.jl</h2>
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <plotly :data="plt_1_data" :layout="plt_1_layout"></plotly>
+    </div>
+    <div class="col-sm-4">
+        <plotly :data="plt_1_data" :layout="plt_1_layout" :responsive=true :editable=false :scroll-zoom=false
+            :static-plot=false :display-mode-bar=nothing :displaylogo=false
+            :to-image-button-options={'filename':'newplot','height':500,'format':'png','scale':1,'width':700}>
+        </plotly>
+    </div>
+    <div class="col-sm-4">
+        <plotly :data="plt_1_data" :layout="plt_1_layout" :static-plot=true></plotly>
+    </div>
+</div>
+
+<div class="row menu">
     <h2>PlotlyLight.jl</h2>
 </div>
-<!-- <div class="row justify-evenly"> -->
-<div class="col-3">
-    <!-- {{plt_1}} -->
-    $(model.plt_1[])
+<div class="row">
+    <div class="col-sm-4">
+        <plotly :data="plt_2_data" :layout="plt_2_layout"></plotly>
+    </div>
+    <div class="col-sm-4">
+        <plotly :data="plt_3_data" :layout="plt_3_layout"></plotly>
+    </div>
+    <div class="col-sm-4">
+        <!-- {{plt_1}} -->
+        <!-- $(model.plt_1[]) -->
+    </div>
 </div>
-<div class="col-3 col-md-3">
-    <!-- {{plt_2}} -->
-    $(model.plt_2[])
-</div>
-<!-- </div> -->
