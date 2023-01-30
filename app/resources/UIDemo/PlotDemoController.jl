@@ -7,11 +7,14 @@ using Dates
 using PlotlyLight
 using StipplePlotly
 
-# StipplePlotly.plot(:iris_plot_data; layout = :plot_layout, config = :plot_config)
-PlotlyLight.src!(:cdn)
+PlotlyLight.src!(:none)
+PlotlyLight.Defaults.parent_style[] = ""
+PlotlyLight.Defaults.style[] = ""
+PlotlyLight.Defaults.layout[].title.text = "Default title3!"
 
+# StipplePlotly.plot(:iris_plot_data; layout = :plot_layout, config = :plot_config)
+# plt1 = Plot(x = 1:20, y = cumsum(randn(20)), type="scatter", mode="lines+markers")
 # pltc = StipplePlotly.PlotConfig()
-# pltc
 
 function write_plotly(o::Plot)
     io = IOBuffer()
@@ -29,6 +32,7 @@ end
     name::R{String} = "MyName"
     # input
     # plt_1::R{Plot} = PlotlyLight.Plot(x = sort(rand(8)), y = randn(8))
+    btn1::R{Bool} = false
     plt_1::R{String} = write_plotly(PlotlyLight.Plot(x = sort(rand(8)), y = randn(8)))
     plt_2::R{String} = write_plotly(PlotlyLight.Plot(x = sort(rand(8)), y = randn(8)))
 
@@ -47,6 +51,10 @@ init() = Stipple.init(MyModel)
 function handlers(m)
     on(m.isready) do _
         m.name[] = "Initialized Name"
+    end
+
+    on(m.btn1) do _
+        m.plt_1[] = write_plotly(PlotlyLight.Plot(x = sort(rand(8)), y = randn(8)))
     end
     return m
 end
