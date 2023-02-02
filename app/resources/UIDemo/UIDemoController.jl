@@ -21,7 +21,7 @@ using Dates
     radio_item::R{String} = "circle"
     checkbox_item::R{Bool} = false
     slider::R{Int} = 10
-    range::R{Vector{Int}} = [10, 20]
+    range::R{Dict} = Dict("min" => 10, "max" => 20)
 
     # buttons and toggle
     button_switch::R{Bool} = false
