@@ -21,7 +21,7 @@ using Dates
     radio_item::R{String} = "circle"
     checkbox_item::R{Bool} = false
     slider::R{Int} = 10
-    range::R{Vector{Int}} = [10, 20]
+    range::R{Vector{Real}} = [10f0, 20f0]
 
     # buttons and toggle
     button_switch::R{Bool} = false
