@@ -34,6 +34,7 @@ using Dates
     input_date::R{String} = "2022-01-21" # "-" separator is important
     date_picker::R{String} = "2022/01/22" # "/" separator is important
     date_picker_input::R{String} = "2022/01/23" # "/" separator is important
+    date_picker_range::R{Dict} = Dict("from" => "2022/01/10", "to" => "2022/01/21")
 
     flag::R{Bool} = false
 end

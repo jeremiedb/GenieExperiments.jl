@@ -132,6 +132,12 @@
         <a href="https://v1.quasar.dev/vue-components/date#basic" target="_blank">Reference</a>
     </div>
     <div class="col-12 col-md-3 menu">
+        <h3>Date picker range</h3>
+        <q-date v-model="date_picker_range" range minimal />
+        <h5>Selected range: {{date_picker_range}}</h5>
+        <a href="https://quasar.dev/vue-components/date#range-selection" target="_blank">Reference</a>
+    </div>
+    <div class="col-12 col-md-3 menu">
         <h3>Date picker from input</h3>
         <q-input filled v-model="date_picker_input" mask="date" :rules="['date']">
             <template v-slot:append>
