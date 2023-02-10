@@ -36,50 +36,50 @@ function write_plotly(o::Plot)
     return plt
 end
 
-# @vars MyModel begin
-#     name::String = "MyName"
-#     btn1::Bool = false
+@vars MyModel begin
+    name::String = "MyName"
+    btn1::Bool = false
     
-#     plt_1::String = write_plotly(PlotlyLight.Plot(x = sort(rand(8)), y = randn(8)))
-#     plt_2::String = write_plotly(PlotlyLight.Plot(x = sort(rand(8)), y = randn(8)))
+    plt_1::String = write_plotly(PlotlyLight.Plot(x = sort(rand(8)), y = randn(8)))
+    plt_2::String = write_plotly(PlotlyLight.Plot(x = sort(rand(8)), y = randn(8)))
 
-#     plt_1_data::PlotData = StipplePlotly.PlotData(x = sort(rand(10)), y = randn(10))
-#     plt_1_layout::PlotLayout = StipplePlotly.PlotLayout()
+    plt_1_data::PlotData = StipplePlotly.PlotData(x = sort(rand(10)), y = randn(10))
+    plt_1_layout::PlotLayout = StipplePlotly.PlotLayout()
 
-#     plt_2_data::Vector{Config} =
-#         [PlotlyLight.Config(x = sort(rand(20)), y = randn(20), type = "scatter")]
-#     plt_2_layout::Config = PlotlyLight.Config()
-
-#     plt_3_data::Vector{Config} =
-#         [PlotlyLight.Config(x = sort(rand(20)), y = randn(20), type = "scatter")]
-#     plt_3_layout::Config =
-#         PlotlyLight.Config(template = PlotlyLight.template("plotly_dark"))
-
-# end
-
-@reactive mutable struct MyModel <: ReactiveModel
-    name::R{String} = "MyName"
-    btn1::R{Bool} = false
-    
-    plt_1::R{String} = write_plotly(PlotlyLight.Plot(x = sort(rand(8)), y = randn(8)))
-    plt_2::R{String} = write_plotly(PlotlyLight.Plot(x = sort(rand(8)), y = randn(8)))
-
-    plt_1_data::R{PlotData} = StipplePlotly.PlotData(x = sort(rand(10)), y = randn(10))
-    plt_1_layout::R{PlotLayout} = StipplePlotly.PlotLayout()
-
-    plt_2_data::R{Vector{Config}} =
+    plt_2_data::Vector{Config} =
         [PlotlyLight.Config(x = sort(rand(20)), y = randn(20), type = "scatter")]
-    plt_2_layout::R{Config} = PlotlyLight.Config()
+    plt_2_layout::Config = PlotlyLight.Config()
 
-    plt_3_data::R{Vector{Config}} =
+    plt_3_data::Vector{Config} =
         [PlotlyLight.Config(x = sort(rand(20)), y = randn(20), type = "scatter")]
-    plt_3_layout::R{Config} =
+    plt_3_layout::Config =
         PlotlyLight.Config(template = PlotlyLight.template("plotly_dark"))
 
-    # plt_static_1::R{Any} = String(io.data)
-    plt_static_1::R{Any} = "test"
-
 end
+
+# @reactive mutable struct MyModel <: ReactiveModel
+#     name::R{String} = "MyName"
+#     btn1::R{Bool} = false
+    
+#     plt_1::R{String} = write_plotly(PlotlyLight.Plot(x = sort(rand(8)), y = randn(8)))
+#     plt_2::R{String} = write_plotly(PlotlyLight.Plot(x = sort(rand(8)), y = randn(8)))
+
+#     plt_1_data::R{PlotData} = StipplePlotly.PlotData(x = sort(rand(10)), y = randn(10))
+#     plt_1_layout::R{PlotLayout} = StipplePlotly.PlotLayout()
+
+#     plt_2_data::R{Vector{Config}} =
+#         [PlotlyLight.Config(x = sort(rand(20)), y = randn(20), type = "scatter")]
+#     plt_2_layout::R{Config} = PlotlyLight.Config()
+
+#     plt_3_data::R{Vector{Config}} =
+#         [PlotlyLight.Config(x = sort(rand(20)), y = randn(20), type = "scatter")]
+#     plt_3_layout::R{Config} =
+#         PlotlyLight.Config(template = PlotlyLight.template("plotly_dark"))
+
+#     # plt_static_1::R{Any} = String(io.data)
+#     plt_static_1::R{Any} = "test"
+
+# end
 
 init() = Stipple.init(MyModel)
 
