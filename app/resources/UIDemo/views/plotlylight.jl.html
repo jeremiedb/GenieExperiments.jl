@@ -1,0 +1,41 @@
+<div class="dash-header row">
+    <h2 class="dash-header">Stipple Plotly Gallery</h2>
+</div>
+
+<div class="dash-body">
+
+    <div class="row menu">
+        <h2>PlotlyLight.jl</h2>
+    </div>
+
+    <div class="row menu">
+        <div class="col-sm-4">
+            <q-btn v-on:click="btn1 = !btn1" color="positive" label="RESET" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            {{ plt_1 }}
+        </div>
+        <div class="col-sm-4">
+            {{ plt_2 }}
+        </div>
+        <div class="col-sm-4">
+            {{ plt_3 }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            $(model.plt_1[])
+        </div>
+        <div class="col-sm-4">
+            $(model.plt_2[])
+        </div>
+        <div class="col-sm-4">
+            $(model.plt_3[])
+        </div>
+    </div>
+
+</div>

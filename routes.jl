@@ -4,6 +4,7 @@ using Genie.Requests, Genie.Router, Genie.Renderer.Html
 using GenieExperiments.UIDemoController
 using GenieExperiments.IrisController
 using GenieExperiments.PlotDemoController
+using GenieExperiments.PlotlyLightController
 
 route("/") do
     html(
@@ -21,6 +22,15 @@ route("/plotdemo") do
         layout = path"app/layouts/stipple_demo.jl.html",
         model = PlotDemoController.init() |> PlotDemoController.handlers,
         context = PlotDemoController,
+    )
+end
+
+route("/plotlylight") do
+    html(
+        path"app/resources/UIDemo/views/plotlylight.jl.html",
+        layout = path"app/layouts/stipple_demo.jl.html",
+        model = PlotlyLightController.init() |> PlotlyLightController.handlers,
+        context = PlotlyLightController,
     )
 end
 

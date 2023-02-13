@@ -26,8 +26,25 @@ PlotlyLight.Defaults.layout[].title.text = "Default title3!"
 p = Plots.scatter(rand(10), rand(10))
 p_static_1 = stringmime("image/png", p)
 
-fig = CairoMakie.scatter(randn(20, 2), color = 1:20)
-p_static_2 = stringmime("image/png", fig)
+p = CairoMakie.scatter(randn(20, 2), color = 1:20)
+p_static_2 = stringmime("image/png", p)
+
+# f = CairoMakie.Figure()
+# ax1 = CairoMakie.Axis(f[1, 1], yticklabelcolor = :black, yaxisposition = :right)
+# ax2 = CairoMakie.Axis(f[1, 1], yticklabelcolor = :black, yaxisposition = :left)
+# CairoMakie.hidespines!(ax1)
+# CairoMakie.hidexdecorations!(ax1)
+# CairoMakie.lines!(ax2, 0:10, sin, color = :navy)
+# CairoMakie.barplot!(ax1, 0:10, rand(11) .* 100, color = "#3399CC66")
+# f
+# io = IOBuffer()
+# show(io, MIME("image/png"), p)
+# str = take!(io)
+# base64encode(str)
+# io = IOBuffer()
+# show(io, MIME("text/html"), p)
+# str = take!(io)
+# base64encode(str)
 
 function write_plotly(o::Plot)
     io = IOBuffer()
@@ -42,9 +59,8 @@ function write_plotly(o::Plot)
 end
 
 function Stipple.render(p::PlotlyLight.Plot)
-    # PlotlyLight.display(p) # or whatever function generates the actual JSON
-    # write_plotly(p)
-    PlotlyLight.display(p)
+    # PlotlyLight.display(p)
+    write_plotly(p)
 end
 
 @vars MyModel begin

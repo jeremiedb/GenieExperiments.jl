@@ -12,16 +12,28 @@
 
     <div class="row menu">
         <div class="col-sm-4">
-            <q-img :src="plt_static_1" spinner-color="white" style="height: auto; max-width: auto"/>
+            <q-img :src="plt_static_1" spinner-color="white" style="height: auto; max-width: auto" />
         </div>
         <div class="col-sm-4">
-            <q-img :src="plt_static_2" spinner-color="white" style="height: auto; max-width: auto"/>
+            <q-img :src="plt_static_2" spinner-color="white" style="height: auto; max-width: auto" />
         </div>
     </div>
 
     <div class="row">
         <blockquote>WIP - Plots using <a href="https://github.com/JuliaComputing/PlotlyLight.jl">PlotlyLight.jl</a>
         </blockquote>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            {{ plt_1 }}
+        </div>
+        <!-- $(model.plt_1[]) -->
+        <div class="col-sm-4">
+            {{ plt_2 }}
+        </div>
+        <div class="col-sm-4">
+            $(model.plt_2[])
+        </div>
     </div>
 
     <div class="row menu">
@@ -56,14 +68,4 @@
         </div>
     </div>
 
-    <div class="row menu">
-        <h2>PlotlyLight.jl v2</h2>
-    </div>
-    <div class="row">
-        <div class="col-sm-4">
-            {{ plt_1 }}
-            <!-- $(model.plt_1[]) -->
-        </div class="col-sm-4">
-            {{ plt_2 }}
-    </div>
 </div>
