@@ -6,9 +6,13 @@ using Dates
 
 using StipplePlotly
 using PlotlyLight
+import CairoMakie
 import Plots
+using Base64
 
-PlotlyLight.src!(:none)
+import Stipple: render
+
+PlotlyLight.src!(:cdn)
 PlotlyLight.Defaults.parent_style[] = ""
 PlotlyLight.Defaults.style[] = ""
 PlotlyLight.Defaults.layout[].title.text = "Default title3!"
@@ -19,10 +23,11 @@ PlotlyLight.Defaults.layout[].title.text = "Default title3!"
 
 # intent: replicate Shiny behavior: https://shiny.rstudio.com/gallery/conditionalpanel-demo.html
 # <img width="357.479553222656" height="300" alt="Plot object" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAb...">
-# io = IOBuffer()
-# p = Plots.scatter(rand(5), rand(5))
-# Plots.png(p, io)
-# str = String(take!(io))
+p = Plots.scatter(rand(10), rand(10))
+p_static_1 = stringmime("image/png", p)
+
+fig = CairoMakie.scatter(randn(20, 2), color = 1:20)
+p_static_2 = stringmime("image/png", fig)
 
 function write_plotly(o::Plot)
     io = IOBuffer()
@@ -36,12 +41,18 @@ function write_plotly(o::Plot)
     return plt
 end
 
+function Stipple.render(p::PlotlyLight.Plot)
+    # PlotlyLight.display(p) # or whatever function generates the actual JSON
+    # write_plotly(p)
+    PlotlyLight.display(p)
+end
+
 @vars MyModel begin
     name::String = "MyName"
     btn1::Bool = false
     
-    plt_1::String = write_plotly(PlotlyLight.Plot(x = sort(rand(8)), y = randn(8)))
-    plt_2::String = write_plotly(PlotlyLight.Plot(x = sort(rand(8)), y = randn(8)))
+    plt_1::String = write_plotly(PlotlyLight.Plot(x = sort(rand(4)), y = randn(4)))
+    plt_2::PlotlyLight.Plot = PlotlyLight.Plot(x = 1:20, y = cumsum(randn(20)), type="scatter", mode="lines+markers")
 
     plt_1_data::PlotData = StipplePlotly.PlotData(x = sort(rand(10)), y = randn(10))
     plt_1_layout::PlotLayout = StipplePlotly.PlotLayout()
@@ -55,51 +66,25 @@ end
     plt_3_layout::Config =
         PlotlyLight.Config(template = PlotlyLight.template("plotly_dark"))
 
+    plt_static_1::String = "data:image/png;base64," * p_static_1
+    plt_static_2::String = "data:image/png;base64," * p_static_2
 end
-
-# @reactive mutable struct MyModel <: ReactiveModel
-#     name::R{String} = "MyName"
-#     btn1::R{Bool} = false
-    
-#     plt_1::R{String} = write_plotly(PlotlyLight.Plot(x = sort(rand(8)), y = randn(8)))
-#     plt_2::R{String} = write_plotly(PlotlyLight.Plot(x = sort(rand(8)), y = randn(8)))
-
-#     plt_1_data::R{PlotData} = StipplePlotly.PlotData(x = sort(rand(10)), y = randn(10))
-#     plt_1_layout::R{PlotLayout} = StipplePlotly.PlotLayout()
-
-#     plt_2_data::R{Vector{Config}} =
-#         [PlotlyLight.Config(x = sort(rand(20)), y = randn(20), type = "scatter")]
-#     plt_2_layout::R{Config} = PlotlyLight.Config()
-
-#     plt_3_data::R{Vector{Config}} =
-#         [PlotlyLight.Config(x = sort(rand(20)), y = randn(20), type = "scatter")]
-#     plt_3_layout::R{Config} =
-#         PlotlyLight.Config(template = PlotlyLight.template("plotly_dark"))
-
-#     # plt_static_1::R{Any} = String(io.data)
-#     plt_static_1::R{Any} = "test"
-
-# end
 
 init() = Stipple.init(MyModel)
 
 function handlers(m)
     on(m.isready) do _
         m.name[] = "Initialized Name"
-
-        # io = IOBuffer()
-        # p = Plots.scatter(rand(5), rand(5))
-        # Plots.png(p, io)
-        # m.plt_static_1[] = String(take!(io))
     end
 
     on(m.btn1) do _
         m.plt_1[] = write_plotly(PlotlyLight.Plot(x = sort(rand(8)), y = randn(8)))
 
-        io = IOBuffer()
         p = Plots.scatter(rand(5), rand(5))
-        Plots.png(p, io)
-        m.plt_static_1[] = String(take!(io))
+        m.plt_static_1[] = "data:image/png;base64," * stringmime("image/png", p)
+
+        fig = CairoMakie.scatter(randn(20, 2), color = 1:20)
+        m.plt_static_2[] = "data:image/png;base64," * stringmime("image/png", fig)
     end
     return m
 end

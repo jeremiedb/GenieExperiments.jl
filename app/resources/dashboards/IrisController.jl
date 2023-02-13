@@ -15,26 +15,48 @@ const iris_colors = Dict(
   "versicolor" => "#e43dff",
   "virginica" => "#2401e2")
 
-@reactive mutable struct IrisModel <: ReactiveModel
-  iris_data::R{DataTable} = DataTable(data) # iris_data has data -> dataframe defined at line 13
 
-  data_pagination::DataTablePagination = DataTablePagination(rows_per_page = 50) # DataTable, DataTablePagination are part of StippleUI which helps us set Data Table UI
+  @vars IrisModel begin
+    iris_data::DataTable = DataTable(data) # iris_data has data -> dataframe defined at line 13
+  
+    data_pagination::DataTablePagination = DataTablePagination(rows_per_page = 50) # DataTable, DataTablePagination are part of StippleUI which helps us set Data Table UI
+  
+    # plot data
+    iris_plot_data::Vector{PlotData} = PlotData[]   # PlotSeries is structure used to store data
+    cluster_plot_data::Vector{PlotData} = PlotData[]
+  
+    # plot_layout and config: Plotly specific
+    plot_layout::PlotLayout = PlotLayout()
+    plot_config::PlotConfig = PlotConfig(displaylogo = false)
+  
+    features::Vector{String} = iris_features #iris dataset have following columns: https://www.kaggle.com/lalitharajesh/iris-dataset-exploratory-data-analysis/data
+    xfeature::String = iris_features[1]
+    yfeature::String = iris_features[2]
+  
+    no_of_clusters::Int = 3
+    no_of_iterations::Int = 10
+  end
 
-  # plot data
-  iris_plot_data::R{Vector{PlotData}} = PlotData[]   # PlotSeries is structure used to store data
-  cluster_plot_data::R{Vector{PlotData}} = PlotData[]
+# @reactive mutable struct IrisModel <: ReactiveModel
+#   iris_data::R{DataTable} = DataTable(data) # iris_data has data -> dataframe defined at line 13
 
-  # plot_layout and config: Plotly specific
-  plot_layout::PlotLayout = PlotLayout()
-  plot_config::R{PlotConfig} = PlotConfig(displaylogo = false)
+#   data_pagination::DataTablePagination = DataTablePagination(rows_per_page = 50) # DataTable, DataTablePagination are part of StippleUI which helps us set Data Table UI
 
-  features::R{Vector{String}} = iris_features #iris dataset have following columns: https://www.kaggle.com/lalitharajesh/iris-dataset-exploratory-data-analysis/data
-  xfeature::R{String} = iris_features[1]
-  yfeature::R{String} = iris_features[2]
+#   # plot data
+#   iris_plot_data::R{Vector{PlotData}} = PlotData[]   # PlotSeries is structure used to store data
+#   cluster_plot_data::R{Vector{PlotData}} = PlotData[]
 
-  no_of_clusters::R{Int} = 3
-  no_of_iterations::R{Int} = 10
-end
+#   # plot_layout and config: Plotly specific
+#   plot_layout::PlotLayout = PlotLayout()
+#   plot_config::R{PlotConfig} = PlotConfig(displaylogo = false)
+
+#   features::R{Vector{String}} = iris_features #iris dataset have following columns: https://www.kaggle.com/lalitharajesh/iris-dataset-exploratory-data-analysis/data
+#   xfeature::R{String} = iris_features[1]
+#   yfeature::R{String} = iris_features[2]
+
+#   no_of_clusters::R{Int} = 3
+#   no_of_iterations::R{Int} = 10
+# end
 
 #= Computation =#
 function plot_data(group::Symbol, model::IrisModel)

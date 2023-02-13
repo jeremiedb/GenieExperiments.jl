@@ -4,9 +4,18 @@
 
 <div class="dash-body">
 
-    <div class="row">
+    <div class="row menu">
         <div class="col-sm-4">
-            <!-- <img alt="Plot object" src={{plt_static_1}}> -->
+            <q-btn v-on:click="btn1 = !btn1" color="positive" label="RESET" />
+        </div>
+    </div>
+
+    <div class="row menu">
+        <div class="col-sm-4">
+            <q-img :src="plt_static_1" spinner-color="white" style="height: auto; max-width: auto"/>
+        </div>
+        <div class="col-sm-4">
+            <q-img :src="plt_static_2" spinner-color="white" style="height: auto; max-width: auto"/>
         </div>
     </div>
 
@@ -49,11 +58,12 @@
 
     <div class="row menu">
         <h2>PlotlyLight.jl v2</h2>
-        <q-btn v-on:click="btn1 = !btn1" color="positive" label="Positive" />
     </div>
     <div class="row">
         <div class="col-sm-4">
-            $(model.plt_1[])
-        </div>
+            {{ plt_1 }}
+            <!-- $(model.plt_1[]) -->
+        </div class="col-sm-4">
+            {{ plt_2 }}
     </div>
 </div>
