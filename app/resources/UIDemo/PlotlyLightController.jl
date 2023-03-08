@@ -8,7 +8,7 @@ using Base64
 using PlotlyLight
 import Stipple: render
 
-PlotlyLight.src!(:cdn)
+PlotlyLight.src!(:none)
 PlotlyLight.Defaults.parent_style[] = ""
 PlotlyLight.Defaults.style[] = ""
 PlotlyLight.Defaults.layout[].title.text = "Default title 3"
@@ -32,7 +32,7 @@ function write_plotly(p::Plot)
     PlotlyLight.write_load_plotly(io)
     println(io, "<script>")
     PlotlyLight.write_newplot(io, p)
-    show(io, MIME"text/javascript"(), p.js)
+    # show(io, MIME"text/javascript"(), p.js)
     print(io, "</script>\n")
     plt = String(take!(io))
     return plt
@@ -46,6 +46,8 @@ end
 
 @vars MyModel begin
     btn1::Bool = false
+    html_1::String = "<span style=\"color: red\">This should be red.</span>"
+    html_2::String = "<ul><li>item 1</li><li>item 2</li></ul>"
 
     plt_1::String = write_plotly(PlotlyLight.Plot(x = sort(rand(4)), y = randn(4)))
     plt_2::PlotlyLight.Plot = PlotlyLight.Plot(
