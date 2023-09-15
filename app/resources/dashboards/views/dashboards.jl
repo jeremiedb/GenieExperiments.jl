@@ -58,5 +58,4 @@ page(
       ])
     ])
   ],
-  @iif(:isready)
 )
